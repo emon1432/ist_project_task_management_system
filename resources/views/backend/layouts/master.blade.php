@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
-    <link rel="icon" href="assets/images/favicon-32x32.png" type="image/png" />
+    <link rel="icon" href="assets/images/ist_logo_mini.gif" type="image/gif" />
     <!--plugins-->
     <link href="assets/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
     <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
@@ -27,7 +27,7 @@
     <link rel="stylesheet" href="assets/css/dark-theme.css" />
     <link rel="stylesheet" href="assets/css/semi-dark.css" />
     <link rel="stylesheet" href="assets/css/header-colors.css" />
-    <title>Syndron - Bootstrap 5 Admin Dashboard Template</title>
+    <title>IST - Dashboard</title>
 </head>
 
 <body>
@@ -41,7 +41,6 @@
         </div>
         @include('backend.layouts.includes.footer')
     </div>
-    @include('backend.layouts.includes.switcher')
 
     <!-- Bootstrap JS -->
     <script src="assets/js/bootstrap.bundle.min.js"></script>

@@ -544,6 +544,13 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
     );
 
     public static $prefixesPsr0 = array (
+        'O' => 
+        array (
+            'Orangehill\\Iseed' => 
+            array (
+                0 => __DIR__ . '/..' . '/orangehill/iseed/src',
+            ),
+        ),
         'M' => 
         array (
             'Mockery' => 
@@ -569,6 +576,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'App\\Actions\\Jetstream\\DeleteUser' => __DIR__ . '/../..' . '/app/Actions/Jetstream/DeleteUser.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
+        'App\\Http\\Controllers\\AdminManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminManagementController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
@@ -772,6 +780,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'DASPRiD\\Enum\\NullValue' => __DIR__ . '/..' . '/dasprid/enum/src/NullValue.php',
         'Database\\Factories\\UserFactory' => __DIR__ . '/../..' . '/database/factories/UserFactory.php',
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
+        'Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',
         'DeepCopy\\Exception\\CloneException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/CloneException.php',
         'DeepCopy\\Exception\\PropertyException' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/Exception/PropertyException.php',
@@ -3820,6 +3829,11 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'NunoMaduro\\Collision\\Provider' => __DIR__ . '/..' . '/nunomaduro/collision/src/Provider.php',
         'NunoMaduro\\Collision\\SolutionsRepositories\\NullSolutionsRepository' => __DIR__ . '/..' . '/nunomaduro/collision/src/SolutionsRepositories/NullSolutionsRepository.php',
         'NunoMaduro\\Collision\\Writer' => __DIR__ . '/..' . '/nunomaduro/collision/src/Writer.php',
+        'Orangehill\\Iseed\\Facades\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Facades/Iseed.php',
+        'Orangehill\\Iseed\\Iseed' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Iseed.php',
+        'Orangehill\\Iseed\\IseedCommand' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedCommand.php',
+        'Orangehill\\Iseed\\IseedServiceProvider' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/IseedServiceProvider.php',
+        'Orangehill\\Iseed\\TableNotFoundException' => __DIR__ . '/..' . '/orangehill/iseed/src/Orangehill/Iseed/Exceptions.php',
         'PHPUnit\\Event\\Application\\Finished' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/Finished.php',
         'PHPUnit\\Event\\Application\\FinishedSubscriber' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/FinishedSubscriber.php',
         'PHPUnit\\Event\\Application\\Started' => __DIR__ . '/..' . '/phpunit/phpunit/src/Event/Events/Application/Started.php',
