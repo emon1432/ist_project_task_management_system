@@ -19,41 +19,28 @@
             <div class="table-responsive">
                 <table id="example2" class="table table-striped table-bordered">
                     <thead>
-                        <tr>
+                        <tr class="text-center">
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Address</th>
-                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         @foreach ($admins as $key => $admin)
-                            <tr>
+                            <tr class="text-center">
                                 <td>{{ $key + 1 }}</td>
                                 <td>
-                                    @if ($admin->image && file_exists('uploads/' . $admin->image))
-                                        <img src="{{ asset('uploads/' . $admin->image) }}" alt="user image"
-                                            class="rounded-circle" width="60px" height="60px">
-                                    @else
-                                        <img src="{{ asset('uploads/default.png') }}" alt="Admin Image"
-                                            class="rounded-circle" width="60px" height="60px">
-                                    @endif
+                                    <img src="{{ asset('uploads') }}/{{ $admin->image ?? 'default.png' }}" alt="user image"
+                                        class="rounded-circle" width="60px" height="60px">
                                 </td>
-                                <td>{{ $admin->name }}</td>
+                                <td>{{ $admin->first_name . ' ' . $admin->last_name }}</td>
                                 <td>{{ $admin->email }}</td>
                                 <td>{{ $admin->phone }}</td>
                                 <td>{{ $admin->address }}</td>
-                                <td>
-                                    @if ($admin->status == 1)
-                                        <span class="badge bg-success">Active</span>
-                                    @else
-                                        <span class="badge bg-danger">Inactive</span>
-                                    @endif
-                                </td>
                                 <td>
                                     <a href="" class="btn btn-info btn-sm">
                                         <i class="bx bx-user"></i>
@@ -90,21 +77,30 @@
                                 <label for="input25" class="form-label">First Name</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-user"></i></span>
-                                    <input type="text" class="form-control" id="input25" placeholder="First Name">
+                                    <input type="text" class="form-control" placeholder="First Name" name="first_name"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input26" class="form-label">Last Name</label>
+                                <label for="last_name" class="form-label">Last Name</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-user"></i></span>
-                                    <input type="text" class="form-control" id="input26" placeholder="Last Name">
+                                    <input type="text" class="form-control" placeholder="Last Name" name="last_name"
+                                        required>
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input27" class="form-label">Email</label>
+                                <label for="email" class="form-label">Email</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-envelope"></i></span>
-                                    <input type="text" class="form-control" id="input27" placeholder="Email">
+                                    <input type="text" class="form-control" placeholder="Email" name="email" required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label">Phone</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bx bx-phone"></i></span>
+                                    <input type="text" class="form-control" placeholder="Phone" name="phone">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -115,45 +111,33 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input29" class="form-label">DOB</label>
+                                <label for="dob" class="form-label">Date of Birth</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-calendar"></i></span>
-                                    <input type="text" class="form-control" id="input29" placeholder="DOB">
+                                    <input type="date" class="form-control" placeholder="Date of Birth"
+                                        name="dob">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input30" class="form-label">Country</label>
+                                <label for="address" class="form-label">Address</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="bx bx-flag"></i></span>
-                                    <select class="form-select" id="input30">
-                                        <option selected="">Open this select menu</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <span class="input-group-text"><i class="bx bx-map"></i></span>
+                                    <input type="text" class="form-control" placeholder="Address" name="address">
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input31" class="form-label">Zip</label>
+                                <label for="image" class="form-label">Image</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="bx bx-pin"></i></span>
-                                    <input type="text" class="form-control" id="input31" placeholder="Zip">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label for="input32" class="form-label">City</label>
-                                <div class="input-group">
-                                    <span class="input-group-text"><i class="bx bx-buildings"></i></span>
-                                    <input type="text" class="form-control" id="input32" placeholder="City">
+                                    <span class="input-group-text"><i class="bx bx-image"></i></span>
+                                    <input type="file" class="form-control" placeholder="Image" name="image">
                                 </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                <button type="button" class="btn btn-primary">Save changes</button>
+                                <button type="submit" class="btn btn-primary">Save</button>
                             </div>
                         </form>
                     </div>
-
                 </div>
             </div>
         </div>

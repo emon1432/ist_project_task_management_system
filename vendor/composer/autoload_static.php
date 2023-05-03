@@ -26,6 +26,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         '6124b4c8570aa390c21fafd04a26c69f' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/deep_copy.php',
         '801c31d8ed748cfa537fa45402288c95' => __DIR__ . '/..' . '/psy/psysh/src/functions.php',
         'e39a8b23c42d4e1452234d762b03835a' => __DIR__ . '/..' . '/ramsey/uuid/src/functions.php',
+        '97727b6b0f2834e612425988413c7612' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/helpers.php',
         '37a3dc5111fe8f707ab4c132ef1dbc62' => __DIR__ . '/..' . '/guzzlehttp/guzzle/src/functions_include.php',
         '265b4faa2b3a9766332744949e83bf97' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Collections/helpers.php',
         'c7a3c339e7e14b60e06a2d7fcce9476b' => __DIR__ . '/..' . '/laravel/framework/src/Illuminate/Events/functions.php',
@@ -127,6 +128,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
             'Laravel\\Sail\\' => 13,
             'Laravel\\Jetstream\\' => 18,
             'Laravel\\Fortify\\' => 16,
+            'LaraIzitoast\\' => 13,
         ),
         'J' => 
         array (
@@ -435,6 +437,10 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'Laravel\\Fortify\\' => 
         array (
             0 => __DIR__ . '/..' . '/laravel/fortify/src',
+        ),
+        'LaraIzitoast\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src',
         ),
         'Jenssegers\\Agent\\' => 
         array (
@@ -2850,6 +2856,8 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'Jenssegers\\Agent\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Agent.php',
         'Jenssegers\\Agent\\AgentServiceProvider' => __DIR__ . '/..' . '/jenssegers/agent/src/AgentServiceProvider.php',
         'Jenssegers\\Agent\\Facades\\Agent' => __DIR__ . '/..' . '/jenssegers/agent/src/Facades/Agent.php',
+        'LaraIzitoast\\LaraIzitoastServiceProvider' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/LaraIzitoastServiceProvider.php',
+        'LaraIzitoast\\Toaster' => __DIR__ . '/..' . '/appslabke/lara-izitoast/lara-izitoast/src/Toaster.php',
         'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
         'Laravel\\Fortify\\Actions\\CompletePasswordReset' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/CompletePasswordReset.php',
         'Laravel\\Fortify\\Actions\\ConfirmPassword' => __DIR__ . '/..' . '/laravel/fortify/src/Actions/ConfirmPassword.php',

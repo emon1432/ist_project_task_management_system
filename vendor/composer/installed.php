@@ -3,13 +3,22 @@
         'name' => 'laravel/laravel',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'ddb9f745b5a3e8713b2fdd982ddf8e4e7d015c4d',
+        'reference' => '4cce3cd96810663a2b505a0798921540e75cda35',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
         'dev' => true,
     ),
     'versions' => array(
+        'appslabke/lara-izitoast' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => '9636c4c3b28855c5d9c6169a10499f6b59568e0a',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../appslabke/lara-izitoast',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'bacon/bacon-qr-code' => array(
             'pretty_version' => '2.0.8',
             'version' => '2.0.8.0',
@@ -427,7 +436,7 @@
         'laravel/laravel' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'ddb9f745b5a3e8713b2fdd982ddf8e4e7d015c4d',
+            'reference' => '4cce3cd96810663a2b505a0798921540e75cda35',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

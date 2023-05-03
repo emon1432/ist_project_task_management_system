@@ -2288,6 +2288,8 @@ return array(
     'Jenssegers\\Agent\\Agent' => $vendorDir . '/jenssegers/agent/src/Agent.php',
     'Jenssegers\\Agent\\AgentServiceProvider' => $vendorDir . '/jenssegers/agent/src/AgentServiceProvider.php',
     'Jenssegers\\Agent\\Facades\\Agent' => $vendorDir . '/jenssegers/agent/src/Facades/Agent.php',
+    'LaraIzitoast\\LaraIzitoastServiceProvider' => $vendorDir . '/appslabke/lara-izitoast/lara-izitoast/src/LaraIzitoastServiceProvider.php',
+    'LaraIzitoast\\Toaster' => $vendorDir . '/appslabke/lara-izitoast/lara-izitoast/src/Toaster.php',
     'Laravel\\Fortify\\Actions\\AttemptToAuthenticate' => $vendorDir . '/laravel/fortify/src/Actions/AttemptToAuthenticate.php',
     'Laravel\\Fortify\\Actions\\CompletePasswordReset' => $vendorDir . '/laravel/fortify/src/Actions/CompletePasswordReset.php',
     'Laravel\\Fortify\\Actions\\ConfirmPassword' => $vendorDir . '/laravel/fortify/src/Actions/ConfirmPassword.php',
