@@ -16,6 +16,8 @@ return array(
     'App\\Exceptions\\Handler' => $baseDir . '/app/Exceptions/Handler.php',
     'App\\Http\\Controllers\\AdminManagementController' => $baseDir . '/app/Http/Controllers/AdminManagementController.php',
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
+    'App\\Http\\Controllers\\StudentManagementController' => $baseDir . '/app/Http/Controllers/StudentManagementController.php',
+    'App\\Http\\Controllers\\TeacherManagementController' => $baseDir . '/app/Http/Controllers/TeacherManagementController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\EncryptCookies' => $baseDir . '/app/Http/Middleware/EncryptCookies.php',

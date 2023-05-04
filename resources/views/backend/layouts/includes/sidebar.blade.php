@@ -43,7 +43,7 @@
 
         {{-- Student List --}}
         <li>
-            <a href="javascript:;">
+            <a href="{{ route('student-management.index') }}">
                 <div class="parent-icon">
                     <i class="bx bx-user-circle"></i>
                 </div>

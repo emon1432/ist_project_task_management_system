@@ -584,6 +584,8 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\AdminManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/AdminManagementController.php',
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
+        'App\\Http\\Controllers\\StudentManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentManagementController.php',
+        'App\\Http\\Controllers\\TeacherManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherManagementController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',

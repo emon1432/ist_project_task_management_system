@@ -15,8 +15,9 @@ return new class extends Migration
             $table->id();
             $table->string('user_type')->nullable();
             $table->string('first_name')->nullable();
-            $table->string('last_name')->nullable();    
+            $table->string('last_name')->nullable();
             $table->string('roll_no')->nullable();
+            $table->string('registration_no')->nullable();
             $table->string('department')->nullable();
             $table->string('session')->nullable();
             $table->string('designation')->nullable();
