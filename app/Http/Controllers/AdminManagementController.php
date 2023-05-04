@@ -12,7 +12,7 @@ class AdminManagementController extends Controller
     {
         //
         $admins = User::where('user_type', 'Admin')->get();
-        return view('backend.pages.admin-list', compact('admins'));
+        return view('backend.pages.admin.index', compact('admins'));
     }
 
     public function store(Request $request)
@@ -45,7 +45,7 @@ class AdminManagementController extends Controller
     {
         //
         $admin = User::find($id);
-        return view('backend.pages.admin-show', compact('admin'));
+        return view('backend.pages.admin.show', compact('admin'));
     }
 
     public function update(Request $request, string $id)

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminManagementController;
+use App\Http\Controllers\TeacherManagementController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +24,10 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         return view('backend.pages.dashboard');
     })->name('dashboard');
 
+    // Admin Management
     Route::resource('admin-management', AdminManagementController::class);
+
+    // Teacher Management
+    Route::resource('teacher-management', TeacherManagementController::class);
+
 });

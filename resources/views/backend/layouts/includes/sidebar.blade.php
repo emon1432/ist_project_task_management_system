@@ -1,7 +1,7 @@
 <div class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div>
-            <img src="{{asset('assets')}}/images/ist_logo_mini.gif" class="logo-icon" alt="logo icon">
+            <img src="{{ asset('assets') }}/images/ist_logo_mini.gif" class="logo-icon" alt="logo icon">
         </div>
         <div>
             <h4 class="logo-text">IST</h4>
@@ -33,7 +33,7 @@
 
         {{-- Teacher List --}}
         <li>
-            <a href="javascript:;">
+            <a href="{{ route('teacher-management.index') }}">
                 <div class="parent-icon">
                     <i class='bx bx-user-circle'></i>
                 </div>
