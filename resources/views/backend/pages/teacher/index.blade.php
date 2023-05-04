@@ -23,6 +23,8 @@
                             <th>#</th>
                             <th>Image</th>
                             <th>Name</th>
+                            <th>Designation</th>
+                            <th>Department</th>
                             <th>Email</th>
                             <th>Phone</th>
                             <th>Address</th>
@@ -43,11 +45,14 @@
                                     @endif
                                 </td>
                                 <td>{{ $teacher->first_name . ' ' . $teacher->last_name }}</td>
+                                <td>{{ $teacher->designation }}</td>
+                                <td>{{ $teacher->department }}</td>
                                 <td>{{ $teacher->email }}</td>
                                 <td>{{ $teacher->phone }}</td>
                                 <td>{{ $teacher->address }}</td>
                                 <td>
-                                    <a href="{{ route('teacher-management.show', $teacher->id) }}" class="btn btn-info btn-sm">
+                                    <a href="{{ route('teacher-management.show', $teacher->id) }}"
+                                        class="btn btn-info btn-sm">
                                         <i class="bx bx-user"></i>
                                     </a>
 
@@ -83,7 +88,7 @@
                                                         @csrf
                                                         @method('PUT')
                                                         <div class="col-md-6">
-                                                            <label for="input25" class="form-label">First Name</label>
+                                                            <label for="first_name" class="form-label">First Name</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-text"><i
                                                                         class="bx bx-user"></i></span>
@@ -120,6 +125,53 @@
                                                                 <input type="text" class="form-control"
                                                                     placeholder="Phone" name="phone"
                                                                     value="{{ $teacher->phone }}">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="department" class="form-label">Department</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-text"><i
+                                                                        class="bx bx-building-house"></i></span>
+                                                                <select class="form-select" name="department" required>
+                                                                    <option selected disabled value="">Choose...
+                                                                    </option>
+                                                                    <option value="CSE"
+                                                                        {{ $teacher->department == 'CSE' ? 'selected' : '' }}>
+                                                                        CSE</option>
+                                                                    <option value="EEE"
+                                                                        {{ $teacher->department == 'EEE' ? 'selected' : '' }}>
+                                                                        EEE</option>
+                                                                    <option value="BBA"
+                                                                        {{ $teacher->department == 'BBA' ? 'selected' : '' }}>
+                                                                        BBA</option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <label for="designation"
+                                                                class="form-label">Designation</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-text"><i
+                                                                        class="bx bx-badge-check"></i></span>
+                                                                <select class="form-select" name="designation" required>
+                                                                    <option selected disabled value="">Choose...
+                                                                    </option>
+                                                                    <option value="Professor"
+                                                                        {{ $teacher->designation == 'Professor' ? 'selected' : '' }}>
+                                                                        Professor</option>
+                                                                    <option value="Associate Professor"
+                                                                        {{ $teacher->designation == 'Associate Professor' ? 'selected' : '' }}>
+                                                                        Associate Professor</option>
+                                                                    <option value="Assistant Professor"
+                                                                        {{ $teacher->designation == 'Assistant Professor' ? 'selected' : '' }}>
+                                                                        Assistant Professor</option>
+                                                                    <option value="Lecturer"
+                                                                        {{ $teacher->designation == 'Lecturer' ? 'selected' : '' }}>
+                                                                        Lecturer</option>
+                                                                    <option value="Assistant Lecturer"
+                                                                        {{ $teacher->designation == 'Assistant Lecturer' ? 'selected' : '' }}>
+                                                                        Assistant Lecturer</option>
+                                                                </select>
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
@@ -187,8 +239,7 @@
         </div>
 
         {{-- Add New Teacher Modal --}}
-        <div class="modal fade" id="teacherAddModal"
-         tabindex="-1" style="display: none;" aria-hidden="true">
+        <div class="modal fade" id="teacherAddModal" tabindex="-1" style="display: none;" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -200,7 +251,7 @@
                             enctype="multipart/form-data">
                             @csrf
                             <div class="col-md-6">
-                                <label for="input25" class="form-label">First Name</label>
+                                <label for="first_name" class="form-label">First Name</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-user"></i></span>
                                     <input type="text" class="form-control" placeholder="First Name"
@@ -231,10 +282,36 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="input28" class="form-label">Password</label>
+                                <label for="password" class="form-label">Password</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-lock-alt"></i></span>
-                                    <input type="password" class="form-control" id="input28" placeholder="Password">
+                                    <input type="password" class="form-control" id="password" placeholder="Password">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="department" class="form-label">Department</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bx bx-building-house"></i></span>
+                                    <select class="form-select" name="department" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="CSE">CSE</option>
+                                        <option value="EEE">EEE</option>
+                                        <option value="BBA">BBA</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="designation" class="form-label">Designation</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bx bx-badge-check"></i></span>
+                                    <select class="form-select" name="designation" required>
+                                        <option selected disabled value="">Choose...</option>
+                                        <option value="Professor">Professor</option>
+                                        <option value="Associate Professor">Associate Professor</option>
+                                        <option value="Assistant Professor">Assistant Professor</option>
+                                        <option value="Lecturer">Lecturer</option>
+                                        <option value="Assistant Lecturer">Assistant Lecturer</option>
+                                    </select>
                                 </div>
                             </div>
                             <div class="col-md-6">

@@ -4,10 +4,10 @@
         <div class="card-header bg-dark">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="card-title text-light">Admin Details</h4>
+                    <h4 class="card-title text-light">Teacher Details</h4>
                 </div>
                 <div class="col-md-6 text-end">
-                    <a href="{{ route('admin-management.index') }}" class="btn btn-sm btn-success">All Admin</a>
+                    <a href="{{ route('teacher-management.index') }}" class="btn btn-sm btn-success">All Teacher</a>
                 </div>
             </div>
         </div>
@@ -17,18 +17,18 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="text-center">
-                                @if ($admin->image != null && file_exists(public_path() . '/uploads/' . $admin->image))
-                                    <img src="{{ asset('uploads/' . $admin->image) }}" alt="user" class="rounded-circle"
-                                        width="170" height="170">
+                                @if ($teacher->image != null && file_exists(public_path() . '/uploads/' . $teacher->image))
+                                    <img src="{{ asset('uploads/' . $teacher->image) }}" alt="user"
+                                        class="rounded-circle" width="170" height="170">
                                 @else
                                     <img src="{{ asset('uploads/default.png') }}" alt="user" class="rounded-circle"
                                         width="170" height="170">
                                 @endif
 
-                                <h4 class="card-title mt-10">{{ $admin->first_name . ' ' . $admin->last_name }}</h4>
-                                <h6 class="card-text">{{ $admin->user_name }}</h6>
+                                <h4 class="card-title mt-10">{{ $teacher->first_name . ' ' . $teacher->last_name }}</h4>
+                                <h6 class="card-text">{{ $teacher->user_name }}</h6>
                                 {{-- status & message --}}
-                                <button class="btn btn-sm btn-primary mt-10"> {{ $admin->user_type }}</button>
+                                <button class="btn btn-sm btn-primary mt-10"> {{ $teacher->designation }}</button>
 
                             </div>
                         </div>
@@ -37,11 +37,11 @@
                         </div>
                         <div class="card-body">
                             <small class="text-muted d-block pt-10">Email address </small>
-                            <h6>{{ $admin->email }}</h6>
+                            <h6>{{ $teacher->email }}</h6>
                             <small class="text-muted d-block pt-10">Phone</small>
-                            <h6>{{ $admin->phone }}</h6>
+                            <h6>{{ $teacher->phone }}</h6>
                             <small class="text-muted d-block pt-10">Address</small>
-                            <h6>{{ $admin->address }}</h6>
+                            <h6>{{ $teacher->address }}</h6>
                             <small class="text-muted d-block pt-10">Social Profile</small>
                             <br>
                             {{-- facebook icon  --}}
@@ -54,7 +54,6 @@
                             <a href="#" class="font-22 text-danger"><i class="lni lni-youtube"></i></a>
                             {{-- whatsapp icon --}}
                             <a href="#" class="font-22 text-success"><i class="lni lni-whatsapp"></i></a>
-
                         </div>
                     </div>
                 </div>
@@ -71,27 +70,35 @@
                                     <tbody>
                                         <tr>
                                             <td>Name</td>
-                                            <td>{{ $admin->first_name . ' ' . $admin->last_name }}</td>
+                                            <td>{{ $teacher->first_name . ' ' . $teacher->last_name }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Designation</td>
+                                            <td>{{ $teacher->designation }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Department</td>
+                                            <td>{{ $teacher->department }}</td>
                                         </tr>
                                         <tr>
                                             <td></i> Email </td>
-                                            <td>{{ $admin->email }}</td>
+                                            <td>{{ $teacher->email }}</td>
                                         </tr>
                                         <tr>
                                             <td>Phone</td>
-                                            <td>{{ $admin->phone }}</td>
+                                            <td>{{ $teacher->phone }}</td>
                                         </tr>
                                         <tr>
                                             <td>Address</td>
-                                            <td>{{ $admin->address }}</td>
+                                            <td>{{ $teacher->address }}</td>
                                         </tr>
                                         <tr>
                                             <td>Date of Birth</td>
-                                            <td>{{ $admin->dob }}</td>
+                                            <td>{{ $teacher->dob }}</td>
                                         </tr>
                                         <tr>
                                             <td>Role</td>
-                                            <td>{{ $admin->user_type }}</td>
+                                            <td>{{ $teacher->user_type }}</td>
                                         </tr>
                                     </tbody>
                                 </table>
