@@ -10,39 +10,31 @@ use Laravel\Fortify\Contracts\UpdatesUserProfileInformation;
 
 class UpdateUserProfileInformation implements UpdatesUserProfileInformation
 {
-    /**
-     * Validate and update the given user's profile information.
-     *
-     * @param  array<string, string>  $input
-     */
     public function update(User $user, array $input): void
     {
-        Validator::make($input, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', Rule::unique('users')->ignore($user->id)],
-            'photo' => ['nullable', 'mimes:jpg,jpeg,png', 'max:1024'],
-        ])->validateWithBag('updateProfileInformation');
+        $user = User::find($user->id);
 
-        if (isset($input['photo'])) {
-            $user->updateProfilePhoto($input['photo']);
-        }
 
-        if ($input['email'] !== $user->email &&
-            $user instanceof MustVerifyEmail) {
-            $this->updateVerifiedUser($user, $input);
+        if ($input['image']) {
+            if ($input['old_image']) {
+                @unlink('uploads/' . $input['old_image']);
+            }
+            $image = $input['image'];
+            $new_image_name = time() . '.' . $image->getClientOriginalExtension();
+            $image->move('uploads/', $new_image_name);
+            $user->image = $new_image_name;
         } else {
-            $user->forceFill([
-                'name' => $input['name'],
-                'email' => $input['email'],
-            ])->save();
+            $user->first_name = $input['first_name'];
+            $user->last_name = $input['last_name'];
+            $user->email = $input['email'];
+            $user->phone = $input['phone'];
+            $user->address = $input['address'];
         }
+        $user->save();
+
+        notify()->success('Profile updated successfully!');
     }
 
-    /**
-     * Update the given verified user's profile information.
-     *
-     * @param  array<string, string>  $input
-     */
     protected function updateVerifiedUser(User $user, array $input): void
     {
         $user->forceFill([
