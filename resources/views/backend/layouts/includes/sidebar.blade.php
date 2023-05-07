@@ -50,6 +50,17 @@
                 <div class="menu-title">Student List</div>
             </a>
         </li>
+
+        {{-- Project Topics --}}
+        <li>
+            <a href="{{ route('project-topic.index') }}">
+                <div class="parent-icon">
+                    <i class="bx bx-book"></i>
+                </div>
+                <div class="menu-title">Project Topics</div>
+            </a>
+        </li>
+
     </ul>
     <!--end navigation-->
 </div>

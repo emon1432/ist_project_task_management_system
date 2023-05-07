@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminManagementController;
+use App\Http\Controllers\ProjectTopicController;
 use App\Http\Controllers\StudentManagementController;
 use App\Http\Controllers\TeacherManagementController;
 use Illuminate\Support\Facades\Route;
@@ -22,4 +23,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     // Student Management
     Route::resource('student-management', StudentManagementController::class);
+
+    // Project Topic
+    Route::resource('project-topic', ProjectTopicController::class);
 });
