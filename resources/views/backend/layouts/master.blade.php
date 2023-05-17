@@ -6,27 +6,29 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--favicon-->
-    <link rel="icon" href="{{asset('assets')}}/images/ist_logo_mini.gif" type="image/gif" />
+    <link rel="icon" href="{{ asset('assets') }}/images/ist_logo_mini.gif" type="image/gif" />
     <!--plugins-->
-    <link href="{{asset('assets')}}/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
-    <link href="{{asset('assets')}}/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/simplebar/css/simplebar.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/select2/css/select2.min.css" rel="stylesheet" />
+    <link href="{{ asset('assets') }}/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
     <!-- loader-->
-    <link href="{{asset('assets')}}/css/pace.min.css" rel="stylesheet" />
-    <script src="{{asset('assets')}}/js/pace.min.js"></script>
+    <link href="{{ asset('assets') }}/css/pace.min.css" rel="stylesheet" />
+    <script src="{{ asset('assets') }}/js/pace.min.js"></script>
     <!-- Bootstrap CSS -->
-    <link href="{{asset('assets')}}/css/bootstrap.min.css" rel="stylesheet">
-    <link href="{{asset('assets')}}/css/bootstrap-extended.css" rel="stylesheet">
-    <link href="{{asset('assets')}}/css/app.css" rel="stylesheet">
-    <link href="{{asset('assets')}}/css/icons.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/bootstrap-extended.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/app.css" rel="stylesheet">
+    <link href="{{ asset('assets') }}/css/icons.css" rel="stylesheet">
     <!-- Theme Style CSS -->
-    <link rel="stylesheet" href="{{asset('assets')}}/css/dark-theme.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/css/semi-dark.css" />
-    <link rel="stylesheet" href="{{asset('assets')}}/css/header-colors.css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/dark-theme.css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/semi-dark.css" />
+    <link rel="stylesheet" href="{{ asset('assets') }}/css/header-colors.css" />
     <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
-    @stack('css')
     <title>IST - Dashboard</title>
 </head>
 
@@ -43,18 +45,20 @@
     </div>
 
     <!-- Bootstrap JS -->
-    <script src="{{asset('assets')}}/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ asset('assets') }}/js/bootstrap.bundle.min.js"></script>
     <!--plugins-->
-    <script src="{{asset('assets')}}/js/jquery.min.js"></script>
-    <script src="{{asset('assets')}}/plugins/simplebar/js/simplebar.min.js"></script>
-    <script src="{{asset('assets')}}/plugins/metismenu/js/metisMenu.min.js"></script>
-    <script src="{{asset('assets')}}/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
-    <script src="{{asset('assets')}}/plugins/datatable/js/jquery.dataTables.min.js"></script>
-    <script src="{{asset('assets')}}/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{ asset('assets') }}/js/jquery.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="{{ asset('assets') }}/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/select2/js/select2.min.js"></script>
+    <script src="{{ asset('assets') }}/plugins/input-tags/js/tagsinput.js"></script>
 
-    <script src="{{asset('assets')}}/js/index.js"></script>
+    <script src="{{ asset('assets') }}/js/index.js"></script>
     <!--app JS-->
-    <script src="{{asset('assets')}}/js/app.js"></script>
+    <script src="{{ asset('assets') }}/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/iziToast.js') }}"></script>
     @include('vendor.lara-izitoast.toast')
@@ -62,7 +66,29 @@
     <script>
         $(document).ready(function() {
             $('#example').DataTable();
+
+            $(".single-select").select2({
+                theme: "bootstrap4",
+                width: $(this).data("width") ?
+                    $(this).data("width") : $(this).hasClass("w-100") ?
+                    "100%" : "style",
+                placeholder: $(this).data("placeholder"),
+                allowClear: Boolean($(this).data("allow-clear")),
+            });
+
+            $(".multiple-select").select2({
+                theme: "bootstrap4",
+                width: $(this).data("width") ?
+                    $(this).data("width") : $(this).hasClass("w-100") ?
+                    "100%" : "style",
+                placeholder: $(this).data("placeholder"),
+                allowClear: Boolean($(this).data("allow-clear")),
+            });
         });
+
+        //Select2
+
+
 
         function deleteData(id) {
             Swal.fire({
@@ -80,7 +106,6 @@
             });
         }
     </script>
-    @stack('js')
 </body>
 
 </html>

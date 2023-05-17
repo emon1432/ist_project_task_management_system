@@ -17,6 +17,11 @@ class TeacherManagementController extends Controller
     public function store(Request $request)
     {
         //
+        // return response()->json($request->all());
+        $project_topic_id = json_encode($request->project_topic);
+        // remove the double quotes
+        $project_topic_id = str_replace('"', '', $project_topic_id);
+
         $teacher = new User();
         $teacher->user_type = 'Teacher';
         $teacher->first_name = $request->first_name;
@@ -25,7 +30,7 @@ class TeacherManagementController extends Controller
         $teacher->password = bcrypt($request->password);
         $teacher->phone = $request->phone;
         $teacher->address = $request->address;
-        $teacher->dob = $request->dob;
+        $teacher->project_topic_id = $project_topic_id;
         $teacher->department = $request->department;
         $teacher->designation = $request->designation;
 
@@ -52,6 +57,10 @@ class TeacherManagementController extends Controller
     public function update(Request $request, string $id)
     {
         //
+        $project_topic_id = json_encode($request->project_topic);
+        // remove the double quotes
+        $project_topic_id = str_replace('"', '', $project_topic_id);
+
         $teacher = User::find($id);
         $teacher->first_name = $request->first_name;
         $teacher->last_name = $request->last_name;
@@ -59,7 +68,7 @@ class TeacherManagementController extends Controller
         $teacher->phone = $request->phone;
         $teacher->department = $request->department;
         $teacher->designation = $request->designation;
-        $teacher->dob = $request->dob;
+        $teacher->project_topic_id = $project_topic_id;
         $teacher->address = $request->address;
 
         if ($request->hasFile('image')) {

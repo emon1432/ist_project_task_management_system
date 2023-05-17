@@ -1,4 +1,5 @@
 @extends('backend.layouts.master')
+
 @section('content')
     <div class="card">
         <div class="card-header bg-dark">
@@ -175,15 +176,27 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="dob" class="form-label">Date of Birth</label>
+                                                            <label for="project_topic" class="form-label">Project
+                                                                Topic</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-text"><i
-                                                                        class="bx bx-calendar"></i></span>
-                                                                <input type="date" class="form-control"
-                                                                    placeholder="Date of Birth" name="dob"
-                                                                    value="{{ $teacher->dob }}">
+                                                                        class="bx bx-book"></i></span>
+                                                                <select class="multiple-select" multiple="multiple"
+                                                                    name="project_topic[]" required>
+                                                                    @php
+                                                                        $project_topics = App\Models\ProjectTopic::all();
+                                                                    @endphp
+                                                                    @foreach ($project_topics as $project_topic)
+                                                                        <option value="{{ $project_topic->id }}"
+                                                                            {{ in_array($project_topic->id, json_decode($teacher->project_topic_id)) ? 'selected' : '' }}>
+                                                                            {{ $project_topic->name }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
                                                             </div>
                                                         </div>
+
+
                                                         <div class="col-md-6">
                                                             <label for="address" class="form-label">Address</label>
                                                             <div class="input-group">
@@ -195,7 +208,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="image" class="form-label">New Image</label>
+                                                            <label for="image" class="form-label">New
+                                                                Image</label>
                                                             <div class="input-group">
                                                                 <span class="input-group-text"><i
                                                                         class="bx bx-image"></i></span>
@@ -204,7 +218,8 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-md-6">
-                                                            <label for="old_image" class="form-label">Old Image</label>
+                                                            <label for="old_image" class="form-label">Old
+                                                                Image</label>
                                                             <div class="input-group">
                                                                 @if ($teacher->image != null && file_exists(public_path() . '/uploads/' . $teacher->image))
                                                                     <img src="{{ asset('uploads') }}/{{ $teacher->image ?? 'default.png' }}"
@@ -315,13 +330,24 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="dob" class="form-label">Date of Birth</label>
+                                <label for="project_topic" class="form-label">Project Topic</label>
                                 <div class="input-group">
-                                    <span class="input-group-text"><i class="bx bx-calendar"></i></span>
-                                    <input type="date" class="form-control" placeholder="Date of Birth"
-                                        name="dob">
+                                 @php
+                                            $project_topics = App\Models\ProjectTopic::all();
+                                        @endphp
+                                    <span class="input-group-text"><i class="bx bx-book"></i></span>
+                                    <select class="from-select multiple-select" multiple="multiple" name="project_topic[]" required>
+                                       
+                                        <option selected disabled value="">Choose...</option>
+                                        @foreach ($project_topics as $project_topic)
+                                            <option value="{{ $project_topic->id }}">{{ $project_topic->name }}
+                                            </option>
+                                        @endforeach
+                                    </select>
                                 </div>
+
                             </div>
+
                             <div class="col-md-6">
                                 <label for="address" class="form-label">Address</label>
                                 <div class="input-group">
