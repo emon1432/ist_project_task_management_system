@@ -19,6 +19,7 @@ class ProjectTopicController extends Controller
         //
         $projectTopic = new ProjectTopic();
         $projectTopic->name = $request->name;
+        $projectTopic->description = $request->description;
         $projectTopic->save();
 
         notify()->success('Project Topic created successfully!');
@@ -30,6 +31,7 @@ class ProjectTopicController extends Controller
         //
         $projectTopic = ProjectTopic::find($id);
         $projectTopic->name = $request->name;
+        $projectTopic->description = $request->description;
         $projectTopic->save();
 
         notify()->success('Project Topic updated successfully!');

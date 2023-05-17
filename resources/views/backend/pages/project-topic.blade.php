@@ -22,6 +22,7 @@
                         <tr class="text-center">
                             <th>#</th>
                             <th>Name</th>
+                            <th>Description</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -30,6 +31,7 @@
                             <tr class="text-center">
                                 <td>{{ $key + 1 }}</td>
                                 <td>{{ $projectTopic->name }}</td>
+                                <td>{{ $projectTopic->description }}</td>
                                 <td>
                                     <a class="btn btn-warning btn-sm" data-bs-toggle="modal"
                                         data-bs-target="#projectTopicEditModal{{ $projectTopic->id }}">
@@ -72,6 +74,14 @@
                                                                     value="{{ $projectTopic->name }}" required>
                                                             </div>
                                                         </div>
+                                                        <div class="col-md-12">
+                                                            <label for="description" class="form-label">Description</label>
+                                                            <div class="input-group">
+                                                                <span class="input-group-text"><i
+                                                                        class="bx bx-book"></i></span>
+                                                                <textarea type="text" class="form-control" placeholder="Description" name="description" required>{{ $projectTopic->description }}</textarea>
+                                                            </div>
+                                                        </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary"
                                                                 data-bs-dismiss="modal">Close</button>
@@ -97,7 +107,7 @@
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title">Add Project Topic</h5>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <form class="row g-3" action="{{ route('project-topic.store') }}" method="POST"
@@ -111,6 +121,13 @@
                                         required>
                                 </div>
                             </div>
+                            <div class="col-md-12">
+                                <label for="description" class="form-label">Description</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bx bx-book"></i></span>
+                                    <textarea type="text" class="form-control" placeholder="Description" name="description" required></textarea>
+                                </div>
+                            </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 <button type="submit" class="btn btn-primary">Save</button>
@@ -122,3 +139,13 @@
         </div>
     </div>
 @endsection
+@push('js')
+    <script>
+        $('#example').dataTable({
+            "columnDefs": [{
+                "width": "20%",
+                "targets": 3
+            }]
+        });
+    </script>
+@endpush

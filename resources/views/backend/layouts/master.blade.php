@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/semi-dark.css" />
     <link rel="stylesheet" href="{{asset('assets')}}/css/header-colors.css" />
     <link href="{{ asset('css/iziToast.css') }}" rel="stylesheet">
+    @stack('css')
     <title>IST - Dashboard</title>
 </head>
 
@@ -79,6 +80,7 @@
             });
         }
     </script>
+    @stack('js')
 </body>
 
 </html>
