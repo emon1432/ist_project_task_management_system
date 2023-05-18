@@ -181,8 +181,9 @@
                                                             <div class="input-group">
                                                                 <span class="input-group-text"><i
                                                                         class="bx bx-book"></i></span>
-                                                                <select class="multiple-select" multiple="multiple"
-                                                                    name="project_topic[]" required>
+                                                                <select class="form-select multiple-select-field"
+                                                                    data-placeholder="Choose anything" multiple
+                                                                    name="project_topic[]">
                                                                     @php
                                                                         $project_topics = App\Models\ProjectTopic::all();
                                                                     @endphp
@@ -330,15 +331,14 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="project_topic" class="form-label">Project Topic</label>
+                                <label for="designation" class="form-label">Designation</label>
                                 <div class="input-group">
-                                 @php
+                                    <span class="input-group-text"><i class="bx bx-badge-check"></i></span>
+                                    <select class="form-select multiple-select-field" data-placeholder="Choose anything"
+                                        multiple name="project_topic[]" required>
+                                        @php
                                             $project_topics = App\Models\ProjectTopic::all();
                                         @endphp
-                                    <span class="input-group-text"><i class="bx bx-book"></i></span>
-                                    <select class="from-select multiple-select" multiple="multiple" name="project_topic[]" required>
-                                       
-                                        <option selected disabled value="">Choose...</option>
                                         @foreach ($project_topics as $project_topic)
                                             <option value="{{ $project_topic->id }}">{{ $project_topic->name }}
                                             </option>

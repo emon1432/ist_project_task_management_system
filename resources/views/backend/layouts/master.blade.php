@@ -14,8 +14,19 @@
     <link href="{{ asset('assets') }}/plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
     <link href="{{ asset('assets') }}/plugins/input-tags/css/tagsinput.css" rel="stylesheet" />
-    <link href="{{ asset('assets') }}/plugins/select2/css/select2.min.css" rel="stylesheet" />
-    <link href="{{ asset('assets') }}/plugins/select2/css/select2-bootstrap4.css" rel="stylesheet" />
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" />
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" />
+    <!-- Or for RTL support -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.rtl.min.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
     <!-- loader-->
     <link href="{{ asset('assets') }}/css/pace.min.css" rel="stylesheet" />
     <script src="{{ asset('assets') }}/js/pace.min.js"></script>
@@ -67,22 +78,12 @@
         $(document).ready(function() {
             $('#example').DataTable();
 
-            $(".single-select").select2({
-                theme: "bootstrap4",
-                width: $(this).data("width") ?
-                    $(this).data("width") : $(this).hasClass("w-100") ?
-                    "100%" : "style",
-                placeholder: $(this).data("placeholder"),
-                allowClear: Boolean($(this).data("allow-clear")),
-            });
-
-            $(".multiple-select").select2({
-                theme: "bootstrap4",
-                width: $(this).data("width") ?
-                    $(this).data("width") : $(this).hasClass("w-100") ?
-                    "100%" : "style",
-                placeholder: $(this).data("placeholder"),
-                allowClear: Boolean($(this).data("allow-clear")),
+            $('.multiple-select-field').select2({
+                theme: "bootstrap-5",
+                width: $(this).data('width') ? $(this).data('width') : $(this).hasClass('w-100') ? '100%' :
+                    'style',
+                placeholder: $(this).data('placeholder'),
+                closeOnSelect: false,
             });
         });
 
