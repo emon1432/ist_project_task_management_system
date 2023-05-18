@@ -81,6 +81,20 @@
                                             <td>{{ $teacher->department }}</td>
                                         </tr>
                                         <tr>
+                                            <td>Project Topics</td>
+                                            <td>
+                                                @php
+                                                    // $teacher->project_topic_id
+                                                    $project_topics = json_decode($teacher->project_topic_id);
+                                                    foreach ($project_topics as $project_topic) {
+                                                        $project_topic_name = App\Models\ProjectTopic::where('id', $project_topic)->first();
+                                                        echo '<span class="badge bg-info">' . $project_topic_name->name . '</span> ';
+                                                    }
+                                                    
+                                                @endphp
+                                            </td>
+                                        </tr>
+                                        <tr>
                                             <td></i> Email </td>
                                             <td>{{ $teacher->email }}</td>
                                         </tr>
