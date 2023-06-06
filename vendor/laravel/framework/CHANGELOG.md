@@ -1,5 +1,6 @@
 # Release Notes for 10.x
 
+<<<<<<< HEAD
 ## [Unreleased](https://github.com/laravel/framework/compare/v10.13.0...10.x)
 
 
@@ -86,6 +87,9 @@
 - Used `Carbon::now()` instead of `now()` ([#47017](https://github.com/laravel/framework/pull/47017))
 - Use file locks when writing failed jobs to disk ([b822d28](https://github.com/laravel/framework/commit/b822d2810d29ab1aedf667abc76ed969d28bbaf5))
 - Raise visibility of Mailable prepareMailableForDelivery() ([#47031](https://github.com/laravel/framework/pull/47031))
+=======
+## [Unreleased](https://github.com/laravel/framework/compare/v10.10.0...10.x)
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 
 
 ## [v10.10.0 (2023-05-09)](https://github.com/laravel/framework/compare/v10.9.0...v10.10.0)

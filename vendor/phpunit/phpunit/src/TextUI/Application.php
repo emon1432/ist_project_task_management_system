@@ -296,7 +296,11 @@ final class Application
                 PHP_EOL,
                 $t->getMessage(),
                 PHP_EOL,
+<<<<<<< HEAD
                 $t->getTraceAsString(),
+=======
+                $t->getTraceAsString()
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             );
 
             while ($t = $t->getPrevious()) {

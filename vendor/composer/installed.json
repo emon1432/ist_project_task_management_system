@@ -893,6 +893,7 @@
         },
         {
             "name": "guzzlehttp/guzzle",
+<<<<<<< HEAD
             "version": "7.7.0",
             "version_normalized": "7.7.0.0",
             "source": {
@@ -904,6 +905,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/fb7566caccf22d74d1ab270de3551f72a58399f5",
                 "reference": "fb7566caccf22d74d1ab270de3551f72a58399f5",
+=======
+            "version": "7.6.1",
+            "version_normalized": "7.6.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -930,7 +944,11 @@
                 "ext-intl": "Required for Internationalized Domain Name (IDN) support",
                 "psr/log": "Required for using the Log middleware"
             },
+<<<<<<< HEAD
             "time": "2023-05-21T14:04:53+00:00",
+=======
+            "time": "2023-05-15T20:43:01+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "bamarni-bin": {
@@ -1002,7 +1020,11 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.7.0"
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.6.1"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             },
             "funding": [
                 {
@@ -1509,6 +1531,7 @@
         },
         {
             "name": "laravel/fortify",
+<<<<<<< HEAD
             "version": "v1.17.3",
             "version_normalized": "1.17.3.0",
             "source": {
@@ -1520,6 +1543,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/fortify/zipball/e99f7cb135bb6e05e4c49e9224c9c9a33c27cfa0",
                 "reference": "e99f7cb135bb6e05e4c49e9224c9c9a33c27cfa0",
+=======
+            "version": "v1.17.2",
+            "version_normalized": "1.17.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/fortify.git",
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/fc4b9b00b0d657dd035751b286f412976596ba32",
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1535,7 +1571,11 @@
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.3"
             },
+<<<<<<< HEAD
             "time": "2023-06-02T12:58:20+00:00",
+=======
+            "time": "2023-04-26T13:35:07+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1576,6 +1616,7 @@
         },
         {
             "name": "laravel/framework",
+<<<<<<< HEAD
             "version": "v10.13.2",
             "version_normalized": "10.13.2.0",
             "source": {
@@ -1587,6 +1628,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
                 "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
+=======
+            "version": "v10.11.0",
+            "version_normalized": "10.11.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "21a5b6d9b669f32c10cc8ba776511b5f62599fea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/21a5b6d9b669f32c10cc8ba776511b5f62599fea",
+                "reference": "21a5b6d9b669f32c10cc8ba776511b5f62599fea",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1731,7 +1785,11 @@
                 "symfony/postmark-mailer": "Required to enable support for the Postmark mail transport (^6.2).",
                 "symfony/psr-http-message-bridge": "Required to use PSR-7 bridging features (^2.0)."
             },
+<<<<<<< HEAD
             "time": "2023-06-05T15:48:15+00:00",
+=======
+            "time": "2023-05-16T13:59:23+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1779,6 +1837,7 @@
         },
         {
             "name": "laravel/jetstream",
+<<<<<<< HEAD
             "version": "v3.2.2",
             "version_normalized": "3.2.2.0",
             "source": {
@@ -1790,6 +1849,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/jetstream/zipball/6ca907084102b567645b59a7114889b0a0a992cf",
                 "reference": "6ca907084102b567645b59a7114889b0a0a992cf",
+=======
+            "version": "v3.2.0",
+            "version_normalized": "3.2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/jetstream.git",
+                "reference": "aee77609b40067c83fd613e134f0982239566ce0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/aee77609b40067c83fd613e134f0982239566ce0",
+                "reference": "aee77609b40067c83fd613e134f0982239566ce0",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1809,7 +1881,11 @@
                 "phpstan/phpstan": "^1.10",
                 "phpunit/phpunit": "^9.3"
             },
+<<<<<<< HEAD
             "time": "2023-05-30T14:24:35+00:00",
+=======
+            "time": "2023-05-10T00:10:17+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -4153,6 +4229,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "10.2.1",
             "version_normalized": "10.2.1.0",
             "source": {
@@ -4164,6 +4241,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/599b33294350e8f51163119d5670512f98b0490d",
                 "reference": "599b33294350e8f51163119d5670512f98b0490d",
+=======
+            "version": "10.1.3",
+            "version_normalized": "10.1.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2379ebafc1737e71cdc84f402acb6b7f04198b9d",
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -4197,7 +4287,11 @@
             "suggest": {
                 "ext-soap": "To be able to generate mocks based on WSDL files"
             },
+<<<<<<< HEAD
             "time": "2023-06-05T05:15:51+00:00",
+=======
+            "time": "2023-05-11T05:16:22+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "bin": [
                 "phpunit"
             ],
@@ -4237,7 +4331,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.1"
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.3"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             },
             "funding": [
                 {
@@ -4697,6 +4795,7 @@
         },
         {
             "name": "psy/psysh",
+<<<<<<< HEAD
             "version": "v0.11.18",
             "version_normalized": "0.11.18.0",
             "source": {
@@ -4708,6 +4807,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4f00ee9e236fa6a48f4560d1300b9c961a70a7ec",
                 "reference": "4f00ee9e236fa6a48f4560d1300b9c961a70a7ec",
+=======
+            "version": "v0.11.17",
+            "version_normalized": "0.11.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/psysh.git",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -4730,7 +4842,11 @@
                 "ext-posix": "If you have PCNTL, you'll want the POSIX extension as well.",
                 "ext-readline": "Enables support for arrow-key history navigation, and showing and manipulating command history."
             },
+<<<<<<< HEAD
             "time": "2023-05-23T02:31:11+00:00",
+=======
+            "time": "2023-05-05T20:02:42+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "bin": [
                 "bin/psysh"
             ],
@@ -4770,7 +4886,11 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.18"
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.17"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             },
             "install-path": "../psy/psysh"
         },
@@ -6102,6 +6222,7 @@
         },
         {
             "name": "spatie/ignition",
+<<<<<<< HEAD
             "version": "1.8.1",
             "version_normalized": "1.8.1.0",
             "source": {
@@ -6113,6 +6234,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/ignition/zipball/d8eb8ea1ed27f48a694405cff363746ffd37f13e",
                 "reference": "d8eb8ea1ed27f48a694405cff363746ffd37f13e",
+=======
+            "version": "1.7.0",
+            "version_normalized": "1.7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/ignition.git",
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -6140,7 +6274,11 @@
                 "openai-php/client": "Require get solutions from OpenAI",
                 "simple-cache-implementation": "To cache solutions from OpenAI"
             },
+<<<<<<< HEAD
             "time": "2023-06-06T14:14:58+00:00",
+=======
+            "time": "2023-05-04T13:20:26+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -6188,6 +6326,7 @@
         },
         {
             "name": "spatie/laravel-ignition",
+<<<<<<< HEAD
             "version": "2.1.3",
             "version_normalized": "2.1.3.0",
             "source": {
@@ -6199,6 +6338,19 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/35711943d4725aa80f8033e4f1cb3a6775530b25",
                 "reference": "35711943d4725aa80f8033e4f1cb3a6775530b25",
+=======
+            "version": "2.1.2",
+            "version_normalized": "2.1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-ignition.git",
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/2f99fa6b732a6049e78ed34e4608ce589605ae54",
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -6227,7 +6379,11 @@
                 "openai-php/client": "Require get solutions from OpenAI",
                 "psr/simple-cache-implementation": "Needed to cache solutions from OpenAI"
             },
+<<<<<<< HEAD
             "time": "2023-05-25T11:30:27+00:00",
+=======
+            "time": "2023-05-09T07:19:31+00:00",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             "type": "library",
             "extra": {
                 "laravel": {

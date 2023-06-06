@@ -721,6 +721,7 @@
         },
         {
             "name": "guzzlehttp/guzzle",
+<<<<<<< HEAD
             "version": "7.7.0",
             "source": {
                 "type": "git",
@@ -731,6 +732,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/guzzle/guzzle/zipball/fb7566caccf22d74d1ab270de3551f72a58399f5",
                 "reference": "fb7566caccf22d74d1ab270de3551f72a58399f5",
+=======
+            "version": "7.6.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/guzzle/guzzle.git",
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/guzzle/guzzle/zipball/8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
+                "reference": "8444a2bacf1960bc6a2b62ed86b8e72e11eebe51",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -827,7 +840,11 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/guzzle/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/guzzle/guzzle/tree/7.7.0"
+=======
+                "source": "https://github.com/guzzle/guzzle/tree/7.6.1"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             },
             "funding": [
                 {
@@ -843,7 +860,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-05-21T14:04:53+00:00"
+=======
+            "time": "2023-05-15T20:43:01+00:00"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
         },
         {
             "name": "guzzlehttp/promises",
@@ -1265,6 +1286,7 @@
         },
         {
             "name": "laravel/fortify",
+<<<<<<< HEAD
             "version": "v1.17.3",
             "source": {
                 "type": "git",
@@ -1275,6 +1297,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/fortify/zipball/e99f7cb135bb6e05e4c49e9224c9c9a33c27cfa0",
                 "reference": "e99f7cb135bb6e05e4c49e9224c9c9a33c27cfa0",
+=======
+            "version": "v1.17.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/fortify.git",
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/fortify/zipball/fc4b9b00b0d657dd035751b286f412976596ba32",
+                "reference": "fc4b9b00b0d657dd035751b286f412976596ba32",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1325,6 +1359,7 @@
                 "issues": "https://github.com/laravel/fortify/issues",
                 "source": "https://github.com/laravel/fortify"
             },
+<<<<<<< HEAD
             "time": "2023-06-02T12:58:20+00:00"
         },
         {
@@ -1339,6 +1374,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/framework/zipball/fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
                 "reference": "fd4619b56b56308e2c2c1840fedd0b8ebb73dfc5",
+=======
+            "time": "2023-04-26T13:35:07+00:00"
+        },
+        {
+            "name": "laravel/framework",
+            "version": "v10.11.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/framework.git",
+                "reference": "21a5b6d9b669f32c10cc8ba776511b5f62599fea"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/21a5b6d9b669f32c10cc8ba776511b5f62599fea",
+                "reference": "21a5b6d9b669f32c10cc8ba776511b5f62599fea",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1525,6 +1576,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
+<<<<<<< HEAD
             "time": "2023-06-05T15:48:15+00:00"
         },
         {
@@ -1539,6 +1591,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/laravel/jetstream/zipball/6ca907084102b567645b59a7114889b0a0a992cf",
                 "reference": "6ca907084102b567645b59a7114889b0a0a992cf",
+=======
+            "time": "2023-05-16T13:59:23+00:00"
+        },
+        {
+            "name": "laravel/jetstream",
+            "version": "v3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel/jetstream.git",
+                "reference": "aee77609b40067c83fd613e134f0982239566ce0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel/jetstream/zipball/aee77609b40067c83fd613e134f0982239566ce0",
+                "reference": "aee77609b40067c83fd613e134f0982239566ce0",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -1594,7 +1662,11 @@
                 "issues": "https://github.com/laravel/jetstream/issues",
                 "source": "https://github.com/laravel/jetstream"
             },
+<<<<<<< HEAD
             "time": "2023-05-30T14:24:35+00:00"
+=======
+            "time": "2023-05-10T00:10:17+00:00"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
         },
         {
             "name": "laravel/sanctum",
@@ -3428,6 +3500,7 @@
         },
         {
             "name": "psy/psysh",
+<<<<<<< HEAD
             "version": "v0.11.18",
             "source": {
                 "type": "git",
@@ -3438,6 +3511,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bobthecow/psysh/zipball/4f00ee9e236fa6a48f4560d1300b9c961a70a7ec",
                 "reference": "4f00ee9e236fa6a48f4560d1300b9c961a70a7ec",
+=======
+            "version": "v0.11.17",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bobthecow/psysh.git",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bobthecow/psysh/zipball/3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+                "reference": "3dc5d4018dabd80bceb8fe1e3191ba8460569f0a",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -3498,9 +3583,15 @@
             ],
             "support": {
                 "issues": "https://github.com/bobthecow/psysh/issues",
+<<<<<<< HEAD
                 "source": "https://github.com/bobthecow/psysh/tree/v0.11.18"
             },
             "time": "2023-05-23T02:31:11+00:00"
+=======
+                "source": "https://github.com/bobthecow/psysh/tree/v0.11.17"
+            },
+            "time": "2023-05-05T20:02:42+00:00"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
         },
         {
             "name": "ralouphie/getallheaders",
@@ -7228,6 +7319,7 @@
         },
         {
             "name": "phpunit/phpunit",
+<<<<<<< HEAD
             "version": "10.2.1",
             "source": {
                 "type": "git",
@@ -7238,6 +7330,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/599b33294350e8f51163119d5670512f98b0490d",
                 "reference": "599b33294350e8f51163119d5670512f98b0490d",
+=======
+            "version": "10.1.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/sebastianbergmann/phpunit.git",
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/2379ebafc1737e71cdc84f402acb6b7f04198b9d",
+                "reference": "2379ebafc1737e71cdc84f402acb6b7f04198b9d",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -7309,7 +7413,11 @@
             "support": {
                 "issues": "https://github.com/sebastianbergmann/phpunit/issues",
                 "security": "https://github.com/sebastianbergmann/phpunit/security/policy",
+<<<<<<< HEAD
                 "source": "https://github.com/sebastianbergmann/phpunit/tree/10.2.1"
+=======
+                "source": "https://github.com/sebastianbergmann/phpunit/tree/10.1.3"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             },
             "funding": [
                 {
@@ -7325,7 +7433,11 @@
                     "type": "tidelift"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-06-05T05:15:51+00:00"
+=======
+            "time": "2023-05-11T05:16:22+00:00"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
         },
         {
             "name": "sebastian/cli-parser",
@@ -8370,6 +8482,7 @@
         },
         {
             "name": "spatie/ignition",
+<<<<<<< HEAD
             "version": "1.8.1",
             "source": {
                 "type": "git",
@@ -8380,6 +8493,18 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/ignition/zipball/d8eb8ea1ed27f48a694405cff363746ffd37f13e",
                 "reference": "d8eb8ea1ed27f48a694405cff363746ffd37f13e",
+=======
+            "version": "1.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/ignition.git",
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/ignition/zipball/f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
+                "reference": "f747d83c6d7cb6229b462f3ddbb3a82dc0db0f78",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -8449,6 +8574,7 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-06-06T14:14:58+00:00"
         },
         {
@@ -8463,6 +8589,22 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/35711943d4725aa80f8033e4f1cb3a6775530b25",
                 "reference": "35711943d4725aa80f8033e4f1cb3a6775530b25",
+=======
+            "time": "2023-05-04T13:20:26+00:00"
+        },
+        {
+            "name": "spatie/laravel-ignition",
+            "version": "2.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-ignition.git",
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-ignition/zipball/2f99fa6b732a6049e78ed34e4608ce589605ae54",
+                "reference": "2f99fa6b732a6049e78ed34e4608ce589605ae54",
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
                 "shasum": ""
             },
             "require": {
@@ -8541,7 +8683,11 @@
                     "type": "github"
                 }
             ],
+<<<<<<< HEAD
             "time": "2023-05-25T11:30:27+00:00"
+=======
+            "time": "2023-05-09T07:19:31+00:00"
+>>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
         },
         {
             "name": "symfony/yaml",
