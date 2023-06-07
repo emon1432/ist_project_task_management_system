@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
+class ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6
 {
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
@@ -597,6 +597,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'App\\Http\\Controllers\\ProjectTopicController' => __DIR__ . '/../..' . '/app/Http/Controllers/ProjectTopicController.php',
         'App\\Http\\Controllers\\StudentManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentManagementController.php',
         'App\\Http\\Controllers\\TeacherManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeacherManagementController.php',
+        'App\\Http\\Controllers\\TeamManagementController' => __DIR__ . '/../..' . '/app/Http/Controllers/TeamManagementController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\EncryptCookies' => __DIR__ . '/../..' . '/app/Http/Middleware/EncryptCookies.php',
@@ -608,6 +609,7 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'App\\Http\\Middleware\\ValidateSignature' => __DIR__ . '/../..' . '/app/Http/Middleware/ValidateSignature.php',
         'App\\Http\\Middleware\\VerifyCsrfToken' => __DIR__ . '/../..' . '/app/Http/Middleware/VerifyCsrfToken.php',
         'App\\Models\\ProjectTopic' => __DIR__ . '/../..' . '/app/Models/ProjectTopic.php',
+        'App\\Models\\Team' => __DIR__ . '/../..' . '/app/Models/Team.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
@@ -3636,6 +3638,8 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
         'Mockery\\Matcher\\Ducktype' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/Ducktype.php',
         'Mockery\\Matcher\\HasKey' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasKey.php',
         'Mockery\\Matcher\\HasValue' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/HasValue.php',
+        'Mockery\\Matcher\\IsEqual' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsEqual.php',
+        'Mockery\\Matcher\\IsSame' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/IsSame.php',
         'Mockery\\Matcher\\MatcherAbstract' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MatcherAbstract.php',
         'Mockery\\Matcher\\MultiArgumentClosure' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MultiArgumentClosure.php',
         'Mockery\\Matcher\\MustBe' => __DIR__ . '/..' . '/mockery/mockery/library/Mockery/Matcher/MustBe.php',
@@ -6812,10 +6816,10 @@ class ComposerStaticInitc5226fd27c16e04b79297e4506aac27c
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitc5226fd27c16e04b79297e4506aac27c::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitc5226fd27c16e04b79297e4506aac27c::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInitc5226fd27c16e04b79297e4506aac27c::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInitc5226fd27c16e04b79297e4506aac27c::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6::$classMap;
 
         }, null, ClassLoader::class);
     }

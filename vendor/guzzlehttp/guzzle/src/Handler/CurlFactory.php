@@ -223,11 +223,7 @@ class CurlFactory implements CurlFactoryInterface
             \CURLOPT_CUSTOMREQUEST => $easy->request->getMethod(),
             \CURLOPT_URL => (string) $easy->request->getUri()->withFragment(''),
             \CURLOPT_RETURNTRANSFER => false,
-<<<<<<< HEAD
             \CURLOPT_HEADER => false,
-=======
-            \CURLOPT_HEADER         => false,
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             \CURLOPT_CONNECTTIMEOUT => 300,
         ];
 

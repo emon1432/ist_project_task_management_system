@@ -2,7 +2,6 @@
 
 Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version.
 
-<<<<<<< HEAD
 
 ## 7.7.0 - 2023-05-21
 
@@ -11,18 +10,13 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 - Support `guzzlehttp/promises` v2
 
 
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 ## 7.6.1 - 2023-05-15
 
 ### Fixed
 
 - Fix `SetCookie::fromString` MaxAge deprecation warning and skip invalid MaxAge values
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 ## 7.6.0 - 2023-05-14
 
 ### Added
@@ -30,10 +24,7 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 - Support for setting the minimum TLS version in a unified way
 - Apply on request the version set in options parameters
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 ## 7.5.2 - 2023-05-14
 
 ### Fixed
@@ -45,10 +36,7 @@ Please refer to [UPGRADING](UPGRADING.md) guide for upgrading to a major version
 
 - Corrected docs and default connect timeout value to 300 seconds
 
-<<<<<<< HEAD
 
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 ## 7.5.1 - 2023-04-17
 
 ### Fixed

@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\ProjectTopicController;
 use App\Http\Controllers\StudentManagementController;
 use App\Http\Controllers\TeacherManagementController;
+use App\Http\Controllers\TeamManagementController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -26,4 +27,7 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     // Project Topic
     Route::resource('project-topic', ProjectTopicController::class);
+
+    // Team Management
+    Route::resource('team-management', TeamManagementController::class);
 });

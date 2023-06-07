@@ -14,7 +14,6 @@ class Sleep
     use Macroable;
 
     /**
-<<<<<<< HEAD
      * The fake sleep callbacks.
      *
      * @var array
@@ -22,8 +21,6 @@ class Sleep
     public static $fakeSleepCallbacks = [];
 
     /**
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
      * The total duration to sleep.
      *
      * @var \Carbon\CarbonInterval
@@ -262,13 +259,10 @@ class Sleep
         if (static::$fake) {
             static::$sequence[] = $this->duration;
 
-<<<<<<< HEAD
             foreach (static::$fakeSleepCallbacks as $callback) {
                 $callback($this->duration);
             }
 
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
             return;
         }
 
@@ -322,10 +316,7 @@ class Sleep
         static::$fake = $value;
 
         static::$sequence = [];
-<<<<<<< HEAD
         static::$fakeSleepCallbacks = [];
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
     }
 
     /**
@@ -432,7 +423,6 @@ class Sleep
 
         return $this;
     }
-<<<<<<< HEAD
 
     /**
      * Only sleep when the given condition is true.
@@ -468,6 +458,4 @@ class Sleep
     {
         static::$fakeSleepCallbacks[] = $callback;
     }
-=======
->>>>>>> e4825bd2451d8525c104e452c26a02a89142c13d
 }
