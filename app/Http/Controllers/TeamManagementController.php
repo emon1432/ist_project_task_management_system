@@ -10,8 +10,10 @@ class TeamManagementController extends Controller
 {
     public function index()
     {
-        $students = User::where('user_type', 'Student')->get();
-        return view('backend.pages.team-management', compact('students'));
+        $teams = Team::with('member1', 'member2')->get();
+        $students = User::with('team_member1', 'team_member2')->where('user_type', 'Student')->get();
+        // return response()->json($students);
+        return view('backend.pages.team-management', compact('teams', 'students'));
     }
 
     public function create()

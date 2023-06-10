@@ -88,8 +88,6 @@
             });
         });
 
-        //Select2
-
 
 
         function deleteData(id) {
@@ -108,6 +106,7 @@
             });
         }
     </script>
+    @stack('js')
 </body>
 
 </html>

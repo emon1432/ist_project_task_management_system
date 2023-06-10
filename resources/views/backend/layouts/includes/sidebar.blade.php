@@ -21,7 +21,7 @@
             </a>
         </li>
 
-        @if (auth()->user()->user_type == 'admin')
+        @if (auth()->user()->user_type == 'Admin')
             {{-- Admin list --}}
             <li>
                 <a href="{{ route('admin-management.index') }}">
