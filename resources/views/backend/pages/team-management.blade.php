@@ -90,7 +90,7 @@
                                     <select class="form-select" id="mySelect2" name="member2" required>
                                         <option value="" selected disabled>Select Member 2</option>
                                         @foreach ($students as $student)
-                                            @if ($student->id != Auth::user()->id && ($student->team_member1 == null && $student->team_member1 == null))
+                                            @if ($student->id != Auth::user()->id && $student->is_member == 0)
                                                 <option value="{{ $student->id }}">
                                                     {{ $student->first_name }} {{ $student->last_name }}
                                                     ({{ $student->roll_no }})

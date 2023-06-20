@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('department')->nullable();
             $table->string('session')->nullable();
             $table->string('designation')->nullable();
+            $table->string('is_member')->default(0);
             $table->json('project_topic_id')->nullable();
             $table->string('email')->unique();
             $table->string('phone')->nullable();
