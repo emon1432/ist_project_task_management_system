@@ -6,12 +6,15 @@
                 <div class="col-md-6">
                     <h4 class="card-title text-light">All Teams</h4>
                 </div>
-                <div class="col-md-6 text-end">
-                    <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#teamAddModal">
-                        <i class="bx bx-plus"></i>
-                        Create New Team
-                    </button>
-                </div>
+                @if (!Auth::user()->team_member1 && !Auth::user()->team_member2 && Auth::user()->user_type == 'Student')
+                    <div class="col-md-6 text-end">
+                        <button type="button" class="btn btn-primary btn-sm" data-bs-toggle="modal"
+                            data-bs-target="#teamAddModal">
+                            <i class="bx bx-plus"></i>
+                            Create New Team
+                        </button>
+                    </div>
+                @endif
             </div>
         </div>
         <div class="card-body">

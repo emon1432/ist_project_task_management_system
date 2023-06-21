@@ -13,52 +13,13 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown dropdown-large">
-                        @php
-                            $notifications = App\Models\Notification::with('fromUser')
-                                ->where('to', Auth::user()->id)
-                                ->where('status', 'unread')
-                                ->get();
-                        @endphp
-                        <a class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#"
-                            data-bs-toggle="dropdown">
-                            @if (count($notifications) > 0)
-                                <span class="alert-count">{{ count($notifications) }}</span>
-                            @endif
-                            <i class='bx bx-bell'></i>
-                        </a>
                         <div class="dropdown-menu dropdown-menu-end">
-                            <a href="javascript:;">
-                                <div class="msg-header">
-                                    <p class="msg-header-title">Notifications</p>
-                                    @if (count($notifications) > 0)
-                                        <p class="msg-header-badge">{{ count($notifications) }} New</p>
-                                    @endif
-                                </div>
-                            </a>
                             <div class="header-notifications-list">
-                                @foreach ($notifications as $notification)
-                                    <a class="dropdown-item" href="javascript:;">
-                                        <div class="d-flex align-items-center">
-                                            <div class="user-online">
-                                                <img src="{{ asset('uploads') }}/{{ $notification->fromUser->image }}"
-                                                    class="msg-avatar" alt="user avatar">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h6 class="msg-name">{{ $notification->title }}<span
-                                                        class="msg-time float-end">
-                                                        {{ $notification->created_at->diffForHumans() }}
-                                                    </span></h6>
-                                                <p class="msg-info">{{ $notification->message }}</p>
-                                            </div>
-                                        </div>
-                                    </a>
-                                @endforeach
                             </div>
                         </div>
                     </li>
                     <li class="nav-item dropdown dropdown-large">
                         <div class="dropdown-menu dropdown-menu-end">
-
                             <div class="header-message-list">
                             </div>
                         </div>

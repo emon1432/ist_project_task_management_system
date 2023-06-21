@@ -52,6 +52,16 @@
                 </a>
             </li>
 
+            {{-- Team List--}}
+            <li>
+                <a href="{{ route('team-management.index') }}">
+                    <div class="parent-icon">
+                        <i class="bx bx-group"></i>
+                    </div>
+                    <div class="menu-title">Team List</div>
+                </a>
+            </li>
+
             {{-- Project Topics --}}
             <li>
                 <a href="{{ route('project-topic.index') }}">
@@ -71,6 +81,21 @@
                     <div class="menu-title">Team</div>
                 </a>
             </li>
+            @php
+                $team = \App\Models\Team::where('member_2', auth()->user()->id)
+                    ->where('status', 0)
+                    ->get();
+            @endphp
+            @if ($team->count() > 0)
+                <li>
+                    <a href="{{ route('team-management.request') }}">
+                        <div class="parent-icon">
+                            <i class="bx bx-group"></i>
+                        </div>
+                        <div class="menu-title">Team Request</div>
+                    </a>
+                </li>
+            @endif
             <li>
                 <a class="has-arrow" href="javascript:;">
                     <div class="parent-icon"><i class="bx bx-map-alt"></i>

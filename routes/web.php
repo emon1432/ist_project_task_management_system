@@ -29,5 +29,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::resource('project-topic', ProjectTopicController::class);
 
     // Team Management
+    Route::get('team-management/request', [TeamManagementController::class, 'request'])->name('team-management.request');
+    Route::get('team-management/request/{id}', [TeamManagementController::class, 'requestAccept'])->name('team-management.request.accept');
+    Route::get('team-management/request/{id}/reject', [TeamManagementController::class, 'requestReject'])->name('team-management.request.reject');
     Route::resource('team-management', TeamManagementController::class);
 });
