@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminManagementController;
+use App\Http\Controllers\ProjectManagementController;
 use App\Http\Controllers\ProjectTopicController;
 use App\Http\Controllers\StudentManagementController;
 use App\Http\Controllers\TeacherManagementController;
@@ -33,4 +34,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('team-management/request/{id}', [TeamManagementController::class, 'requestAccept'])->name('team-management.request.accept');
     Route::get('team-management/request/{id}/reject', [TeamManagementController::class, 'requestReject'])->name('team-management.request.reject');
     Route::resource('team-management', TeamManagementController::class);
+
+    // Project Management
+    Route::get('project-proposal', [ProjectManagementController::class, 'proposal'])->name('project.proposal');
+    Route::post('project-proposal', [ProjectManagementController::class, 'proposalStore'])->name('project.proposal.store');
 });

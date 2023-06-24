@@ -52,7 +52,7 @@
                 </a>
             </li>
 
-            {{-- Team List--}}
+            {{-- Team List --}}
             <li>
                 <a href="{{ route('team-management.index') }}">
                     <div class="parent-icon">
@@ -93,6 +93,17 @@
                             <i class="bx bx-group"></i>
                         </div>
                         <div class="menu-title">Team Request</div>
+                    </a>
+                </li>
+            @endif
+            {{-- Project Proposal --}}
+            @if (auth()->user()->team->status)
+                <li>
+                    <a href="{{ route('project.proposal') }}">
+                        <div class="parent-icon">
+                            <i class="bx bx-group"></i>
+                        </div>
+                        <div class="menu-title">Project Proposal</div>
                     </a>
                 </li>
             @endif

@@ -46,7 +46,7 @@
             <input type="hidden" name="email" value="admin@gmail.com">
             <input type="hidden" name="password" value="12345678">
             <div class="flex items-center justify-end mt-4">
-                <x-button >
+                <x-button>
                     {{ __('Admin') }}
                 </x-button>
             </div>
@@ -56,7 +56,7 @@
             <input type="hidden" name="email" value="teacher@gmail.com">
             <input type="hidden" name="password" value="12345678">
             <div class="flex items-center justify-end mt-4">
-                <x-button >
+                <x-button>
                     {{ __('Teacher') }}
                 </x-button>
             </div>
@@ -66,8 +66,8 @@
             <input type="hidden" name="email" value="student1@gmail.com">
             <input type="hidden" name="password" value="12345678">
             <div class="flex items-center justify-end mt-4">
-                <x-button >
-                    {{ __('Student1') }}
+                <x-button>
+                    {{ __('Student1 Emon') }}
                 </x-button>
             </div>
         </form>
@@ -76,8 +76,8 @@
             <input type="hidden" name="email" value="student2@gmail.com">
             <input type="hidden" name="password" value="12345678">
             <div class="flex items-center justify-end mt-4">
-                <x-button >
-                    {{ __('Student2') }}
+                <x-button>
+                    {{ __('Student2 Alem') }}
                 </x-button>
             </div>
         </form>
@@ -86,8 +86,18 @@
             <input type="hidden" name="email" value="student3@gmail.com">
             <input type="hidden" name="password" value="12345678">
             <div class="flex items-center justify-end mt-4">
-                <x-button >
-                    {{ __('Student3') }}
+                <x-button>
+                    {{ __('Student3 Redwan') }}
+                </x-button>
+            </div>
+        </form>
+        <form method="POST" action="{{ route('login') }}">
+            @csrf
+            <input type="hidden" name="email" value="student4@gmail.com">
+            <input type="hidden" name="password" value="12345678">
+            <div class="flex items-center justify-end mt-4">
+                <x-button>
+                    {{ __('Student4 Priyanka') }}
                 </x-button>
             </div>
         </form>
