@@ -99,12 +99,37 @@
             {{-- Project Proposal --}}
             @if (auth()->user()->team->status)
                 <li>
-                    <a href="{{ route('project.proposal') }}">
-                        <div class="parent-icon">
-                            <i class="bx bx-group"></i>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-group"></i>
                         </div>
-                        <div class="menu-title">Project Proposal</div>
+                        <div class="menu-title">Project</div>
                     </a>
+                    <ul>
+                        @php
+                            $project = \App\Models\Project::where('team_id', auth()->user()->team->id)->first();
+                        @endphp
+                        @if (!$project)
+                            <li>
+                                <a href="{{ route('project.proposal') }}">
+                                    <i class='bx bx-radio-circle'></i>
+                                    Project Proposal
+                                </a>
+                            </li>
+                        @else
+                            <li>
+                                <a href="{{ route('project.details', $project->id) }}">
+                                    <i class='bx bx-radio-circle'></i>
+                                    My Project Details
+                                </a>
+                            </li>
+                        @endif
+                        <li>
+                            <a href="{{ route('project.index') }}">
+                                <i class='bx bx-radio-circle'></i>
+                                Project List
+                            </a>
+                        </li>
+                    </ul>
                 </li>
             @endif
             <li>

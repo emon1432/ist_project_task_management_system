@@ -75,7 +75,7 @@
                 <div class="row mb-4">
                     <label for="file" class="col-sm-2 col-form-label">Attach File (Optional)</label>
                     <div class="col-sm-10">
-                        <input type="file" class="form-control" name="attachment" required>
+                        <input type="file" class="form-control" name="attachment">
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary float-end">Submit</button>

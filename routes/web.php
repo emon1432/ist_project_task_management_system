@@ -38,4 +38,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     // Project Management
     Route::get('project-proposal', [ProjectManagementController::class, 'proposal'])->name('project.proposal');
     Route::post('project-proposal', [ProjectManagementController::class, 'proposalStore'])->name('project.proposal.store');
+    Route::get('project-details/{id}', [ProjectManagementController::class, 'details'])->name('project.details');
+    Route::get('projects', [ProjectManagementController::class, 'index'])->name('project.index');
 });

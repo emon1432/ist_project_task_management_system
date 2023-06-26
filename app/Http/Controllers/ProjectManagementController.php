@@ -12,6 +12,12 @@ class ProjectManagementController extends Controller
 {
     //
 
+    public function index()
+    {
+        $projects = Project::with('team.member1', 'team.member2', 'supervisor', 'topic')->get();
+        return view('backend.pages.project.index', compact('projects'));
+    }
+
     public function proposal()
     {
         $team = Team::with('member1', 'member2')
@@ -22,12 +28,6 @@ class ProjectManagementController extends Controller
         $projectTopics = ProjectTopic::all();
 
         $supervisors = User::where('user_type', 'Teacher')->get();
-
-        // return response()->json([
-        //     'team' => $team,
-        //     'project_topic' => $project_topic,
-        //     'supervisors' => $supervisors,
-        // ]);
 
         return view('backend.pages.project.proposal', compact('team', 'supervisors', 'projectTopics'));
     }
@@ -52,5 +52,11 @@ class ProjectManagementController extends Controller
 
         notify()->success('Project Proposal Submitted Successfully');
         return redirect('/dashboard');
+    }
+
+    public function details($id)
+    {
+        $project = Project::with('team.member1', 'team.member2', 'supervisor', 'topic')->find($id);
+        return view('backend.pages.project.details', compact('project'));
     }
 }
