@@ -145,6 +145,40 @@
                     </li>
                 </ul>
             </li>
+        @elseif(auth()->user()->user_type == 'Teacher')
+            @php
+                $pendingProject = \App\Models\Project::where('supervisor_id', auth()->user()->id)
+                    ->where('status', 0)
+                    ->get();
+                $approvedProject = \App\Models\Project::where('supervisor_id', auth()->user()->id)
+                    ->where('status', 1)
+                    ->get();
+            @endphp
+            <li>
+                <a class="has-arrow" href="javascript:;">
+                    <div class="parent-icon"><i class="bx bx-group"></i>
+                    </div>
+                    <div class="menu-title">Project</div>
+                </a>
+                <ul>
+                    <li>
+                        <a href="{{ route('project.pending') }}">
+                            <i class='bx bx-radio-circle'></i>
+                            Pending Project
+                            <span class="badge rounded-pill bg-danger ms-auto">{{ $pendingProject->count() }}</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{{ route('project.supervisor.list', auth()->user()->id) }}">
+                            <i class='bx bx-radio-circle'></i>
+                            Project List
+                            <span class="badge rounded-pill bg-success ms-auto">{{ $approvedProject->count() }}</span>
+
+                        </a>
+                    </li>
+
+                </ul>
+            </li>
         @endif
     </ul>
     <!--end navigation-->

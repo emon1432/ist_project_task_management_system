@@ -72,11 +72,86 @@
                                 @endif
                             </tr>
                         </tbody>
+                        @if (auth()->user()->user_type == 'Teacher' && $project->status == 0)
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <td class="float-end">
+                                        {{-- approve --}}
+                                        <a class="btn btn-success btn-sm approve">Approve</a>
+                                        {{-- reject --}}
+                                        <a class="btn btn-danger btn-sm reject">Reject</a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        @endif
+                        @if (auth()->user()->user_type == 'Student' && $project->status == 2)
+                            <tfoot>
+                                <tr>
+                                    <th></th>
+                                    <td class="float-end">
+                                        {{-- edit & resubmit --}}
+                                        <a href="{{ route('project.proposal.edit', $project->id) }}"
+                                         class="btn btn-primary btn-sm">Edit &
+                                            Resubmit</a>
+                                    </td>
+                                </tr>
+                            </tfoot>
+                        @endif
                     </table>
                 @else
                     <h4 class="text-center">No Project Found</h4>
                 @endif
+
+                {{-- Modal for approve and reject --}}
+                <div class="modal fade" id="approveRejectModal" tabindex="-1" style="display: none;" aria-hidden="true">
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Create New Team</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form class="row g-3" action="" method="POST" enctype="multipart/form-data">
+                                    @csrf
+
+                                    {{-- comment --}}
+                                    <div class="col-md-12">
+                                        <label for="comment" class="form-label">Write Comment</label>
+                                        <textarea name="supervisor_comment" id="comment" cols="30" rows="5" class="form-control"></textarea>
+                                    </div>
+
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                            data-bs-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 @endsection
+@push('js')
+    {{-- approve --}}
+    <script>
+        $('.approve').click(function() {
+            $('#approveRejectModal').modal('show');
+            $('#approveRejectModal .modal-title').html('Approve Project');
+            $('#approveRejectModal form').attr('action', "{{ route('project.approve', $project->id) }}");
+        });
+    </script>
+
+    {{-- reject --}}
+    <script>
+        $('.reject').click(function() {
+            $('#approveRejectModal').modal('show');
+            $('#approveRejectModal .modal-title').html('Reject Project');
+            $('#approveRejectModal form').attr('action', "{{ route('project.reject', $project->id) }}");
+        });
+    </script>
+@endpush

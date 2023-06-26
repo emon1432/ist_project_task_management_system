@@ -37,7 +37,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     // Project Management
     Route::get('project-proposal', [ProjectManagementController::class, 'proposal'])->name('project.proposal');
+    Route::get('project-proposal/{id}', [ProjectManagementController::class, 'proposalEdit'])->name('project.proposal.edit');
     Route::post('project-proposal', [ProjectManagementController::class, 'proposalStore'])->name('project.proposal.store');
     Route::get('project-details/{id}', [ProjectManagementController::class, 'details'])->name('project.details');
     Route::get('projects', [ProjectManagementController::class, 'index'])->name('project.index');
+    Route::get('project-pending', [ProjectManagementController::class, 'pending'])->name('project.pending');
+    Route::post('project-approve/{id}', [ProjectManagementController::class, 'approve'])->name('project.approve');
+    Route::post('project-reject/{id}', [ProjectManagementController::class, 'reject'])->name('project.reject');
+    Route::get('project-list/{id}', [ProjectManagementController::class, 'supervisorProjectList'])->name('project.supervisor.list');
 });

@@ -11,6 +11,7 @@
         <div class="card-body">
             <form action="{{ route('project.proposal.store') }}" method="POST" enctype="multipart/form-data">
                 @csrf
+                <input type="hidden" name="project_id" value="{{ @$project->id }}">
                 <div class="row mb-4">
                     <label for="file" class="col-sm-2 col-form-label">Team Name</label>
                     <div class="col-sm-10">
@@ -41,7 +42,9 @@
                         <select class="form-select mySelect2" name="project_topic_id" required>
                             <option selected disabled value="">Select Project Topic</option>
                             @foreach ($projectTopics as $projectTopic)
-                                <option value="{{ $projectTopic->id }}">{{ $projectTopic->name }}</option>
+                                <option value="{{ $projectTopic->id }}"
+                                    {{ $projectTopic->id == @$project->project_topic_id ? 'selected' : '' }}>
+                                    {{ $projectTopic->name }}</option>
                             @endforeach
                         </select>
                     </div>
@@ -52,7 +55,9 @@
                         <select class="form-select mySelect2" name="supervisor_id" required>
                             <option value="" selected disabled>Select Project Supervisor</option>
                             @foreach ($supervisors as $supervisor)
-                                <option value="{{ $supervisor->id }}">{{ $supervisor->first_name }}
+                                <option value="{{ $supervisor->id }}"
+                                    {{ $supervisor->id == @$project->supervisor_id ? 'selected' : '' }}>
+                                    {{ $supervisor->first_name }}
                                     {{ $supervisor->last_name }}</option>
                             @endforeach
                         </select>
@@ -62,14 +67,14 @@
                 <div class="row mb-4">
                     <label for="title" class="col-sm-2 col-form-label">Project Title</label>
                     <div class="col-sm-10">
-                        <input type="text" class="form-control" name="title" placeholder="Enter Project Title"
-                            required>
+                        <input type="text" class="form-control" name="title" placeholder="Enter Project Title" required
+                            value="{{ @$project->title }}">
                     </div>
                 </div>
                 <div class="row mb-4">
                     <label for="description" class="col-sm-2 col-form-label">Project Description</label>
                     <div class="col-sm-10">
-                        <textarea class="form-control" name="description" rows="3" placeholder="Enter Project Description" required></textarea>
+                        <textarea class="form-control" name="description" rows="3" placeholder="Enter Project Description" required>{{ @$project->description }}</textarea>
                     </div>
                 </div>
                 <div class="row mb-4">

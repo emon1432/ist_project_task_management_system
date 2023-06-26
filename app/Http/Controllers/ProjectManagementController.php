@@ -29,7 +29,23 @@ class ProjectManagementController extends Controller
 
         $supervisors = User::where('user_type', 'Teacher')->get();
 
+
         return view('backend.pages.project.proposal', compact('team', 'supervisors', 'projectTopics'));
+    }
+
+    public function proposalEdit($id)
+    {
+        $team = Team::with('member1', 'member2')
+            ->where('member_1', auth()->user()->id)
+            ->orWhere('member_2', auth()->user()->id)
+            ->first();
+
+        $projectTopics = ProjectTopic::all();
+
+        $supervisors = User::where('user_type', 'Teacher')->get();
+
+        $project = Project::find($id);
+        return view('backend.pages.project.proposal', compact('team', 'supervisors', 'projectTopics', 'project'));
     }
 
     public function proposalStore(Request $request)
@@ -41,8 +57,12 @@ class ProjectManagementController extends Controller
             'project_topic_id' => 'required',
             'supervisor_id' => 'required',
         ]);
-
-        $project = new Project();
+        if ($request->project_id) {
+            $project = Project::find($request->project_id);
+            $project->status = 0;
+        } else {
+            $project = new Project();
+        }
         $project->team_id = $request->team_id;
         $project->supervisor_id = $request->supervisor_id;
         $project->project_topic_id = $request->project_topic_id;
@@ -58,5 +78,47 @@ class ProjectManagementController extends Controller
     {
         $project = Project::with('team.member1', 'team.member2', 'supervisor', 'topic')->find($id);
         return view('backend.pages.project.details', compact('project'));
+    }
+
+    public function pending()
+    {
+        $projects = Project::with('team', 'team.member1', 'team.member2', 'supervisor', 'topic')
+            ->where('supervisor_id', auth()->user()->id)
+            ->where('status', 0)
+            ->get();
+        // return response()->json($projects);
+        return view('backend.pages.project.pending', compact('projects'));
+    }
+
+    public function approve(Request $request, $id)
+    {
+        $project = Project::find($id);
+        $project->supervisor_comment = $request->supervisor_comment;
+        $project->status = 1;
+        $project->save();
+
+        notify()->success('Project Approved Successfully');
+        return redirect()->route('project.pending');
+    }
+
+    public function reject(Request $request, $id)
+    {
+        $project = Project::find($id);
+        $project->supervisor_comment = $request->supervisor_comment;
+        $project->status = 2;
+        $project->save();
+
+        notify()->error('Project Rejected Successfully');
+        return redirect()->route('project.pending');
+    }
+
+    public function supervisorProjectList($id)
+    {
+        $projects = Project::with('team', 'team.member1', 'team.member2', 'supervisor', 'topic')
+            ->where('supervisor_id', $id)
+            ->where('status', 1)
+            ->get();
+        // return response()->json($projects);
+        return view('backend.pages.project.index', compact('projects'));
     }
 }
