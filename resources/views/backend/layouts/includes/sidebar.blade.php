@@ -71,6 +71,15 @@
                     <div class="menu-title">Project Topics</div>
                 </a>
             </li>
+
+            <li>
+                <a href="{{ route('project.index') }}">
+                    <div class="parent-icon">
+                        <i class="bx bx-book"></i>
+                    </div>
+                    <div class="menu-title">Project List</div>
+                </a>
+            </li>
         @elseif(auth()->user()->user_type == 'Student')
             {{-- Create Team --}}
             <li>
@@ -165,14 +174,20 @@
                         <a href="{{ route('project.pending') }}">
                             <i class='bx bx-radio-circle'></i>
                             Pending Project
-                            <span class="badge rounded-pill bg-danger ms-auto">{{ $pendingProject->count() }}</span>
+                            @if ($pendingProject->count() > 0)
+                                <span
+                                    class="badge rounded-pill bg-danger ms-auto">{{ $pendingProject->count() }}</span>
+                            @endif
                         </a>
                     </li>
                     <li>
-                        <a href="{{ route('project.supervisor.list', auth()->user()->id) }}">
+                        <a href="{{ route('project.supervisor.list') }}">
                             <i class='bx bx-radio-circle'></i>
                             Project List
-                            <span class="badge rounded-pill bg-success ms-auto">{{ $approvedProject->count() }}</span>
+                            @if ($approvedProject->count() > 0)
+                                <span
+                                    class="badge rounded-pill bg-success ms-auto">{{ $approvedProject->count() }}</span>
+                            @endif
 
                         </a>
                     </li>

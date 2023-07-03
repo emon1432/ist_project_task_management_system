@@ -44,5 +44,5 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('project-pending', [ProjectManagementController::class, 'pending'])->name('project.pending');
     Route::post('project-approve/{id}', [ProjectManagementController::class, 'approve'])->name('project.approve');
     Route::post('project-reject/{id}', [ProjectManagementController::class, 'reject'])->name('project.reject');
-    Route::get('project-list/{id}', [ProjectManagementController::class, 'supervisorProjectList'])->name('project.supervisor.list');
+    Route::get('project-list', [ProjectManagementController::class, 'supervisorProjectList'])->name('project.supervisor.list');
 });

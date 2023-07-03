@@ -112,10 +112,10 @@ class ProjectManagementController extends Controller
         return redirect()->route('project.pending');
     }
 
-    public function supervisorProjectList($id)
+    public function supervisorProjectList()
     {
         $projects = Project::with('team', 'team.member1', 'team.member2', 'supervisor', 'topic')
-            ->where('supervisor_id', $id)
+            ->where('supervisor_id', auth()->user()->id)
             ->where('status', 1)
             ->get();
         // return response()->json($projects);
