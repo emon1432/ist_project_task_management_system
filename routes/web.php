@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminManagementController;
 use App\Http\Controllers\ProjectManagementController;
 use App\Http\Controllers\ProjectTopicController;
 use App\Http\Controllers\StudentManagementController;
+use App\Http\Controllers\TaskManagementController;
 use App\Http\Controllers\TeacherManagementController;
 use App\Http\Controllers\TeamManagementController;
 use Illuminate\Support\Facades\Route;
@@ -45,4 +46,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('project-approve/{id}', [ProjectManagementController::class, 'approve'])->name('project.approve');
     Route::post('project-reject/{id}', [ProjectManagementController::class, 'reject'])->name('project.reject');
     Route::get('project-list', [ProjectManagementController::class, 'supervisorProjectList'])->name('project.supervisor.list');
+
+    // Task Management
+    Route::get('tasks', [TaskManagementController::class, 'index'])->name('task.index');
+    Route::get('tasks/{id}', [TaskManagementController::class, 'show'])->name('task.show');
+    Route::post('tasks/store', [TaskManagementController::class, 'store'])->name('task.store');
 });
