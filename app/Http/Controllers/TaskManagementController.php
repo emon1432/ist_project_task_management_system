@@ -9,12 +9,9 @@ use Illuminate\Http\Request;
 class TaskManagementController extends Controller
 {
     //
-
     public function store(Request $request)
     {
         // return response()->json($request->all());
-
-
         $task = new Task();
         $task->project_id = $request->project_id;
         $task->team_id = $request->team_id;
@@ -27,5 +24,17 @@ class TaskManagementController extends Controller
 
         notify()->success('Task created successfully.');
         return redirect()->back();
+    }
+
+    // studentPendingTask
+    public function studentPendingTask($id)
+    {
+        $tasks = Task::with('project', 'team', 'team.member1', 'team.member2', 'supervisor')
+            ->where('project_id', $id)
+            ->where('team_id', auth()->user()->team->id)
+            ->where('ended_at', '>=', Carbon::now())
+            ->get();
+        // return response()->json($tasks);
+        return view('backend.pages.student.task.pending', compact('tasks'));
     }
 }

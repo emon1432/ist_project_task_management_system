@@ -140,6 +140,23 @@
                         </li>
                     </ul>
                 </li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon"><i class="bx bx-task"></i>
+                        </div>
+                        <div class="menu-title">Tasks</div>
+                    </a>
+                    <ul>
+                        @if ($project)
+                            <li>
+                                <a href="{{ route('student.task.pending', $project->id) }}">
+                                    <i class='bx bx-radio-circle'></i>
+                                    Pending Tasks
+                                </a>
+                            </li>
+                        @endif
+                    </ul>
+                </li>
             @endif
         @elseif(auth()->user()->user_type == 'Teacher')
             @php

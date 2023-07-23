@@ -51,4 +51,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::get('tasks', [TaskManagementController::class, 'index'])->name('task.index');
     Route::get('tasks/{id}', [TaskManagementController::class, 'show'])->name('task.show');
     Route::post('tasks/store', [TaskManagementController::class, 'store'])->name('task.store');
+    // student.task.pending
+    Route::get('student-pending-task/{id}', [TaskManagementController::class, 'studentPendingTask'])->name('student.task.pending');
 });
