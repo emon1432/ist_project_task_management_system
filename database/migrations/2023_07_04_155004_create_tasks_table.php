@@ -17,11 +17,15 @@ return new class extends Migration
             $table->foreignId('team_id')->constrained('teams')->cascadeOnDelete();
             $table->foreignId('supervisor_id')->constrained('users')->cascadeOnDelete();
             $table->string('title');
-            $table->text('description');
+            $table->text('description')->nullable();
+            $table->text('submitted_description')->nullable();
             $table->string('attachment')->nullable();
-            $table->tinyInteger('status')->default(0)->comment('0 = Pending, 1 = In Progress, 2 = Completed, 3 = Failed');
+            $table->string('submitted_attachment')->nullable();
+            $table->tinyInteger('status')->default(0)->comment('0 = Pending, 1 = In Progress, 2 = Submitted, 3 = Approved, 4 = Rejected, 5 = Failed');
             $table->timestamp('started_at')->nullable();
             $table->timestamp('ended_at')->nullable();
+            $table->timestamp('submitted_at')->nullable();
+            $table->string('remarks')->nullable();
             $table->timestamps();
         });
     }

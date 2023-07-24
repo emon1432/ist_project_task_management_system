@@ -809,6 +809,7 @@ class ComposerStaticInitdb1f4965dab03395a464eaee6d53bcf6
         'Database\\Seeders\\DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeders/DatabaseSeeder.php',
         'Database\\Seeders\\ProjectTopicsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProjectTopicsTableSeeder.php',
         'Database\\Seeders\\ProjectsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/ProjectsTableSeeder.php',
+        'Database\\Seeders\\TasksTableSeeder' => __DIR__ . '/../..' . '/database/seeders/TasksTableSeeder.php',
         'Database\\Seeders\\TeamsTableSeeder' => __DIR__ . '/../..' . '/database/seeders/TeamsTableSeeder.php',
         'Database\\Seeders\\UsersTableSeeder' => __DIR__ . '/../..' . '/database/seeders/UsersTableSeeder.php',
         'DeepCopy\\DeepCopy' => __DIR__ . '/..' . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',

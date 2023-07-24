@@ -53,4 +53,12 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
     Route::post('tasks/store', [TaskManagementController::class, 'store'])->name('task.store');
     // student.task.pending
     Route::get('student-pending-task/{id}', [TaskManagementController::class, 'studentPendingTask'])->name('student.task.pending');
+    //student.task.accept
+    Route::get('student-accept-task/{id}', [TaskManagementController::class, 'studentAcceptTask'])->name('student.task.accept');
+    //student.task.in-progress
+    Route::get('student-in-progress-task/{id}', [TaskManagementController::class, 'studentInProgressTask'])->name('student.task.in-progress');
+    // student.task.submit
+    Route::post('student-submit-task', [TaskManagementController::class, 'studentSubmitTask'])->name('student.task.submit');
+    //student.task.approved
+    Route::get('student-approved-task/{id}', [TaskManagementController::class, 'studentApprovedTask'])->name('student.task.approved');
 });

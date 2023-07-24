@@ -230,6 +230,7 @@ return array(
     'Database\\Seeders\\DatabaseSeeder' => $baseDir . '/database/seeders/DatabaseSeeder.php',
     'Database\\Seeders\\ProjectTopicsTableSeeder' => $baseDir . '/database/seeders/ProjectTopicsTableSeeder.php',
     'Database\\Seeders\\ProjectsTableSeeder' => $baseDir . '/database/seeders/ProjectsTableSeeder.php',
+    'Database\\Seeders\\TasksTableSeeder' => $baseDir . '/database/seeders/TasksTableSeeder.php',
     'Database\\Seeders\\TeamsTableSeeder' => $baseDir . '/database/seeders/TeamsTableSeeder.php',
     'Database\\Seeders\\UsersTableSeeder' => $baseDir . '/database/seeders/UsersTableSeeder.php',
     'DeepCopy\\DeepCopy' => $vendorDir . '/myclabs/deep-copy/src/DeepCopy/DeepCopy.php',

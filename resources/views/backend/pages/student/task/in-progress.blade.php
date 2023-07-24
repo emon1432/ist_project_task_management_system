@@ -4,7 +4,7 @@
         <div class="card-header bg-dark">
             <div class="row">
                 <div class="col-md-6">
-                    <h4 class="card-title text-light">Pending Task List</h4>
+                    <h4 class="card-title text-light">In Progress Task List</h4>
                 </div>
             </div>
         </div>
@@ -19,6 +19,7 @@
                             <th>Assigned By</th>
                             <th>Assigned Time</th>
                             <th>Deadline</th>
+                            <th>Status</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -32,9 +33,28 @@
                                 <td>{{ Carbon\Carbon::parse($task->started_at)->format('d-m-Y h:i A') }}</td>
                                 <td>{{ Carbon\Carbon::parse($task->ended_at)->format('d-m-Y h:i A') }}</td>
                                 <td>
-                                    <a href="javascript:;" data-bs-toggle="modal"
-                                        data-bs-target="#taskShowModal{{ $task->id }}" class="btn btn-primary btn-sm"><i
-                                            class="bx bx-show"></i></a>
+                                    @if ($task->status == 0)
+                                        <span class="badge rounded-pill bg-warning text-dark">Pending</span>
+                                    @elseif($task->status == 1)
+                                        <span class="badge rounded-pill bg-primary text-dark">In Progress</span>
+                                    @elseif($task->status == 2)
+                                        <span class="badge rounded-pill bg-success text-dark">Submitted</span>
+                                    @elseif($task->status == 3)
+                                        <span class="badge rounded-pill bg-danger text-dark">Failed</span>
+                                    @elseif($task->status == 4)
+                                        <span class="badge rounded-pill bg-danger text-dark">Rejected</span>
+                                    @endif
+                                </td>
+                                <td>
+                                    @if ($task->status == 2)
+                                        <a href="javascript:;" data-bs-toggle="modal"
+                                            data-bs-target="#taskShowModal{{ $task->id }}"
+                                            class="btn btn-primary btn-sm"><i class="bx bx-show"></i></a>
+                                    @else
+                                        <a href="javascript:;" data-bs-toggle="modal"
+                                            data-bs-target="#taskShowModal{{ $task->id }}"
+                                            class="btn btn-primary btn-sm"><i class="bx bx-edit"></i></a>
+                                    @endif
                                 </td>
                             </tr>
                             {{-- Show Task Modal --}}
@@ -103,16 +123,54 @@
                                                             Attachment</span>
                                                     @endif
                                                 </div>
+                                                @if ($task->status == 2)
+                                                    <div class="col-md-12 mb-3">
+                                                        <h6>Submitted Description</h6>
+                                                        <p>{{ $task->submitted_description }}</p>
+                                                    </div>
+                                                    <div class="col-md-12 mb-3">
+                                                        <h6>Submitted Attachment</h6>
+                                                        @if ($task->submitted_attachment)
+                                                            <a href="{{ asset('storage/files/' . $task->submitted_attachment) }}"
+                                                                target="_blank" class="btn btn-primary btn-sm"><i
+                                                                    class="bx bx-download"></i> Download</a>
+                                                        @else
+                                                            <span class="badge rounded-pill bg-info text-dark">No
+                                                                Attachment</span>
+                                                        @endif
+                                                    </div>
+                                                @endif
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-light-secondary"
-                                                    data-bs-dismiss="modal"><i class="bx bx-x d-block d-sm-none"></i><span
-                                                        class="d-none d-sm-block">Close</span></button>
-                                                <a class="btn btn-primary ml-1"
-                                                    href="{{ route('student.task.accept', $task->id) }}">
-                                                    <i class="bx bx-check d-block d-sm-none"></i>
-                                                    <span class="d-none d-sm-block">Accept</span>
-                                                </a>
+                                                @if ($task->status == 1)
+                                                    <form action="{{ route('student.task.submit') }}" method="POST">
+                                                        @csrf
+                                                        <input type="hidden" name="task_id" value="{{ $task->id }}">
+                                                        <div class="col-md-12 mb-3">
+                                                            <label for="submitted_description">Submitted Description</label>
+                                                            <textarea name="submitted_description" id="submitted_description" class="form-control" cols="30" rows="5"
+                                                                placeholder="Write your description here..."></textarea>
+                                                        </div>
+                                                        <div class="col-md-12 mb-3">
+                                                            <label for="submitted_attachment">Submitted Attachment</label>
+                                                            <input type="file" name="submitted_attachment"
+                                                                id="submitted_attachment" class="form-control">
+                                                        </div>
+                                                        <button type="button" class="btn btn-light-secondary"
+                                                            data-bs-dismiss="modal"><i
+                                                                class="bx bx-x d-block d-sm-none"></i><span
+                                                                class="d-none d-sm-block">Close</span></button>
+                                                        <button class="btn btn-primary ml-1" type="submit">
+                                                            <i class="bx bx-check d-block d-sm-none"></i>
+                                                            <span class="d-none d-sm-block">Accept</span>
+                                                        </button>
+                                                    </form>
+                                                @elseif($task->status == 2)
+                                                    <button type="button" class="btn btn-primary ml-1"
+                                                        data-bs-dismiss="modal"><i
+                                                            class="bx bx-x d-block d-sm-none"></i><span
+                                                            class="d-none d-sm-block">Close</span></button>
+                                                @endif
                                             </div>
                                         </div>
                                     </div>
