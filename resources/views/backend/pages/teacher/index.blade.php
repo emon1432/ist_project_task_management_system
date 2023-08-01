@@ -331,7 +331,8 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <label for="designation" class="form-label">Designation</label>
+                                <label for="designation" class="form-label">Project
+                                    Topic</label>
                                 <div class="input-group">
                                     <span class="input-group-text"><i class="bx bx-badge-check"></i></span>
                                     <select class="form-select multiple-select-field" data-placeholder="Choose anything"

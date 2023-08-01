@@ -106,7 +106,7 @@
                 </li>
             @endif
             {{-- Project Proposal --}}
-            @if (auth()->user()->team->status)
+            @if (auth()->user()->team)
                 <li>
                     <a class="has-arrow" href="javascript:;">
                         <div class="parent-icon"><i class="bx bx-group"></i>
