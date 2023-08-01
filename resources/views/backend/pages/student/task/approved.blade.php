@@ -83,7 +83,8 @@
                                                     @if ($task->status == 0)
                                                         <span class="badge rounded-pill bg-warning text-dark">Pending</span>
                                                     @elseif($task->status == 1)
-                                                        <span class="badge rounded-pill bg-primary text-dark">Submitted</span>
+                                                        <span
+                                                            class="badge rounded-pill bg-primary text-dark">Submitted</span>
                                                     @elseif($task->status == 2)
                                                         <span
                                                             class="badge rounded-pill bg-success text-dark">Approved</span>
@@ -137,35 +138,16 @@
                                                 @endif
                                             </div>
                                             <div class="modal-footer">
-                                                @if ($task->status == 0)
-                                                    <form action="{{ route('student.task.submit') }}" method="POST">
-                                                        @csrf
-                                                        <input type="hidden" name="task_id" value="{{ $task->id }}">
-                                                        <div class="col-md-12 mb-3">
-                                                            <label for="submitted_description">Submitted Description</label>
-                                                            <textarea name="submitted_description" id="submitted_description" class="form-control" cols="30" rows="5"
-                                                                placeholder="Write your description here..."></textarea>
-                                                        </div>
-                                                        <div class="col-md-12 mb-3">
-                                                            <label for="submitted_attachment">Submitted Attachment</label>
-                                                            <input type="file" name="submitted_attachment"
-                                                                id="submitted_attachment" class="form-control">
-                                                        </div>
-                                                        <button type="button" class="btn btn-light-secondary"
-                                                            data-bs-dismiss="modal"><i
-                                                                class="bx bx-x d-block d-sm-none"></i><span
-                                                                class="d-none d-sm-block">Close</span></button>
-                                                        <button class="btn btn-primary ml-1" type="submit">
-                                                            <i class="bx bx-check d-block d-sm-none"></i>
-                                                            <span class="d-none d-sm-block">Submit</span>
-                                                        </button>
-                                                    </form>
-                                                @elseif($task->status == 1)
-                                                    <button type="button" class="btn btn-primary ml-1"
-                                                        data-bs-dismiss="modal"><i
-                                                            class="bx bx-x d-block d-sm-none"></i><span
-                                                            class="d-none d-sm-block">Close</span></button>
-                                                @endif
+                                                <div class="col-md-12 mb-3">
+                                                    <h6>Teacher Remarks</h6>
+                                                    <p>{{ $task->remarks }}</p>
+                                                </div>
+
+                                                <button type="button" class="btn btn-primary ml-1"
+                                                    data-bs-dismiss="modal"><i class="bx bx-x d-block d-sm-none"></i><span
+                                                        class="d-none d-sm-block">Close</span>
+                                                </button>
+
                                             </div>
                                         </div>
                                     </div>

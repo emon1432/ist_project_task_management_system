@@ -21,7 +21,7 @@ return new class extends Migration
             $table->text('submitted_description')->nullable();
             $table->string('attachment')->nullable();
             $table->string('submitted_attachment')->nullable();
-            $table->tinyInteger('status')->default(0)->comment('0 = Pending, 1 = In Progress, 2 = Submitted, 3 = Approved, 4 = Rejected, 5 = Failed');
+            $table->tinyInteger('status')->default(0)->comment('0 = Pending, 1 = Submitted, 2 = Accepted, 3 = Rejected, 4 = Failed');
             $table->timestamp('started_at')->nullable();
             $table->timestamp('ended_at')->nullable();
             $table->timestamp('submitted_at')->nullable();

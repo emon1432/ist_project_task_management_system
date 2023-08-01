@@ -22,6 +22,7 @@
                             <th>Status</th>
                             @if (auth()->user()->user_type == 'Teacher')
                                 <th>Task Create</th>
+                                <th>Task List</th>
                             @endif
                         </tr>
                     </thead>
@@ -52,6 +53,10 @@
                                         <a data-bs-toggle="modal" data-bs-target="#taskAssignModal{{ $project->id }}"
                                             class="btn btn-sm btn-primary"><i class="bx bx-task"></i></a>
                                         </a>
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('task.list', $project->id) }}" class="btn btn-sm btn-success"><i
+                                                class="bx bx-list-ul"></i></a>
                                     </td>
                                 @endif
 

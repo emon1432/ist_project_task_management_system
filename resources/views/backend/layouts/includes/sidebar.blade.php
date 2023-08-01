@@ -155,18 +155,12 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('student.task.in-progress', $project->id) }}">
-                                    <i class='bx bx-radio-circle'></i>
-                                    In Progress
-                                </a>
-                            </li>
-                            <li>
                                 <a href="{{ route('student.task.approved', $project->id) }}">
                                     <i class='bx bx-radio-circle'></i>
                                     Approved
                                 </a>
                             </li>
-                            {{-- <li>
+                            <li>
                                 <a href="{{ route('student.task.rejected', $project->id) }}">
                                     <i class='bx bx-radio-circle'></i>
                                     Rejected
@@ -177,7 +171,7 @@
                                     <i class='bx bx-radio-circle'></i>
                                     Failed
                                 </a>
-                            </li> --}}
+                            </li>
                         @endif
                     </ul>
                 </li>
