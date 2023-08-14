@@ -51,6 +51,7 @@ class ProjectManagementController extends Controller
     public function proposalStore(Request $request)
     {
         // return response()->json($request->all());
+        // dd($request->all());
 
         $request->validate([
             'team_id' => 'required',
@@ -68,6 +69,14 @@ class ProjectManagementController extends Controller
         $project->project_topic_id = $request->project_topic_id;
         $project->title = $request->title;
         $project->description = $request->description;
+
+        //attachment
+        if ($request->hasFile('attachment')) {
+            $file = $request->file('attachment');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/'), $fileName);
+            $project->attachment = $fileName;
+        }
         $project->save();
 
         notify()->success('Project Proposal Submitted Successfully');

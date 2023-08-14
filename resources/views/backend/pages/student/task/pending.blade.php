@@ -110,7 +110,7 @@
                                                 <div class="col-md-12 mb-3">
                                                     <h6>Attachment</h6>
                                                     @if ($task->attachment)
-                                                        <a href="{{ asset('storage/files/' . $task->attachment) }}"
+                                                        <a href="{{ asset('uploads/' . $task->attachment) }}"
                                                             target="_blank" class="btn btn-primary btn-sm"><i
                                                                 class="bx bx-download"></i> Download</a>
                                                     @else
@@ -126,7 +126,7 @@
                                                     <div class="col-md-12 mb-3">
                                                         <h6>Submitted Attachment</h6>
                                                         @if ($task->submitted_attachment)
-                                                            <a href="{{ asset('storage/files/' . $task->submitted_attachment) }}"
+                                                            <a href="{{ asset('uploads/' . $task->submitted_attachment) }}"
                                                                 target="_blank" class="btn btn-primary btn-sm"><i
                                                                     class="bx bx-download"></i> Download</a>
                                                         @else

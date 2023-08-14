@@ -88,9 +88,9 @@
                                                         </div>
 
                                                         <div class="col-md-12 mb-3">
-                                                            <label for="file" class="form-label">File(optional)</label>
+                                                            <label for="file" class="form-label">Attachment(optional)</label>
                                                             <input type="file" class="form-control" id="file"
-                                                                name="file" placeholder="Enter File">
+                                                                name="attachment" placeholder="Enter File">
                                                         </div>
 
                                                         <div class="col-md-6 mb-3">

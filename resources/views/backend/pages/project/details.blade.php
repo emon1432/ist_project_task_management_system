@@ -47,8 +47,8 @@
                             <tr>
                                 <th>Project Document</th>
                                 <td>
-                                    <a href="{{ asset('storage/' . $project->document) }}" target="_blank"
-                                        class="btn btn-primary btn-sm">View</a>
+                                    <a href="{{ asset('uploads/' . $project->attachment) }}" target="_blank"
+                                        class="btn btn-primary btn-sm {{ $project->attachment == NULL ? 'disabled' : '' }}">View</a>
                                 </td>
                             </tr>
                             <tr>
@@ -92,7 +92,7 @@
                                     <td class="float-end">
                                         {{-- edit & resubmit --}}
                                         <a href="{{ route('project.proposal.edit', $project->id) }}"
-                                         class="btn btn-primary btn-sm">Edit &
+                                            class="btn btn-primary btn-sm">Edit &
                                             Resubmit</a>
                                     </td>
                                 </tr>

@@ -12,6 +12,7 @@ class TaskManagementController extends Controller
     public function store(Request $request)
     {
         // return response()->json($request->all());
+        // dd($request->all());
         $task = new Task();
         $task->project_id = $request->project_id;
         $task->team_id = $request->team_id;
@@ -20,6 +21,14 @@ class TaskManagementController extends Controller
         $task->description = $request->description;
         $task->started_at = str_replace('T', ' ', $request->started_at);
         $task->ended_at = str_replace('T', ' ', $request->ended_at);
+
+        //attachment
+        if ($request->hasFile('attachment')) {
+            $file = $request->file('attachment');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/'), $fileName);
+            $task->attachment = $fileName;
+        }
         $task->save();
 
         notify()->success('Task created successfully.');
@@ -83,8 +92,15 @@ class TaskManagementController extends Controller
         $task = Task::find($request->task_id);
         $task->status = 1;
         $task->submitted_description = $request->submitted_description;
-        $task->submitted_attachment = $request->submitted_attachment;
         $task->submitted_at = Carbon::now();
+
+        //submitted_attachment
+        if ($request->hasFile('submitted_attachment')) {
+            $file = $request->file('submitted_attachment');
+            $fileName = time() . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('uploads/'), $fileName);
+            $task->submitted_attachment = $fileName;
+        }
         $task->save();
 
         notify()->success('Task submitted successfully.');
